@@ -6,21 +6,15 @@ import lombok.Data;
 @Data
 @Builder
 public class ObjectData {
-    private String _id;
-    private String name;
-    private Integer price;
-    private String category;
-    private String owner;
-    private String createdAt;
-    private String updateAt;
+    public String _id;
+    public String name;
+    public Integer price;
+    public String owner;
 
-    public ObjectData(String _id, String name, Integer price, String category, String owner, String createdAt, String updateAt) {
+    public ObjectData(String _id, String name, Integer price, String owner) {
         this._id = _id;
         this.name = name;
         this.price = price;
-        this.category = category;
         this.owner = owner;
-        this.createdAt = createdAt;
-        this.updateAt = updateAt;
     }
 }

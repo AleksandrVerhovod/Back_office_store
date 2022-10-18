@@ -4,6 +4,7 @@ import apitests.models.*;
 import apitests.prepare_data.PrepareAPIData;
 import apitests.utils.Specifications;
 import constants.Credentials;
+import constants.DataConstants;
 import constants.Messages;
 import constants.Urls;
 import io.restassured.http.ContentType;
@@ -11,8 +12,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.authentication.FormAuthConfig.formAuthConfig;
+import static io.restassured.authentication.FormAuthConfig.springSecurity;
 import static org.hamcrest.Matchers.equalTo;
 
 
@@ -21,18 +25,14 @@ public class ReqRespTests {
     @Test
     public void registrationUserTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
-        String name = PrepareAPIData.getRegistrationData().getName();
-        String email = PrepareAPIData.getRegistrationData().getEmail();
-        Register registerUser = new Register(name, email, PrepareAPIData.getRegistrationData().getPassword());
-        UserData user = given()
-                .body(registerUser)
+        Register user = PrepareAPIData.getRegistrationData();
+        UserData userData = given()
                 .when()
-                .contentType(ContentType.JSON)
+                .body(user)
                 .post(Urls.URL_REG_USER)
                 .then().log().all()
                 .extract().as(UserData.class);
-        Assert.assertEquals(user.getName(), name);
-        Assert.assertEquals(user.getEmail(), email);
+        Assert.assertEquals(userData.getMessage(), Messages.REG_USER);
     }
 
     @Test
@@ -53,36 +53,44 @@ public class ReqRespTests {
     public void logoutUserTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         given()
+                .auth()
+                .preemptive()
+                .oauth2(Credentials.TOKEN)
                 .when()
-                .contentType(ContentType.JSON)
-                .header("token", Credentials.TOKEN)
                 .get(Urls.URL_LOGOUT_USER)
-                .then().log().all()
-                .body("message", equalTo(Messages.LOGOUT));
+                .then().log().all();
     }
 
     @Test
     public void getAllProductsTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         List<ObjectData> allProducts = given()
+                .auth()
+                .preemptive()
+                .oauth2(Credentials.TOKEN)
                 .when()
-                .contentType(ContentType.JSON)
-                .header("token", Credentials.TOKEN)
                 .get(Urls.URL_ALL_PRODUCTS)
-                .then().log().all()
+                .then().log().body()
                 .extract().body().jsonPath().getList("data", ObjectData.class);
+        List<String> products = allProducts.stream().map(ObjectData::getName).collect(Collectors.toList());
+        System.out.println(products);
+        System.out.println(DataConstants.PRODUCTS());
+        Assert.assertEquals(DataConstants.PRODUCTS(), products);
     }
 
     @Test
     public void getProductByQueryTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
-        List<ProductsData> allProducts = given()
+        List<ObjectData> queryProducts = given()
+                .auth()
+                .preemptive()
+                .oauth2(Credentials.TOKEN)
                 .when()
-                .contentType(ContentType.JSON)
-                .header("token", Credentials.TOKEN)
-                .get(Urls.URL_ALL_PRODUCTS)
-                .then().log().all()
-                .extract().body().jsonPath().getList("data", ProductsData.class);
+                .get(Urls.URL_VALID_QUERY_PRODUCT)
+                .then().log().body()
+                .extract().body().jsonPath().getList("data", ObjectData.class);
+        List<String> products = queryProducts.stream().map(ObjectData::getName).collect(Collectors.toList());
+        Assert.assertEquals(DataConstants.QUERY_PRODUCTS(), queryProducts);
     }
 }
 

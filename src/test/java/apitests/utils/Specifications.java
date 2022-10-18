@@ -1,5 +1,7 @@
 package apitests.utils;
 
+import constants.Credentials;
+import constants.Urls;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;

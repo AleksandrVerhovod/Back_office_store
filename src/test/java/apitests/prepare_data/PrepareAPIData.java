@@ -20,7 +20,6 @@ public class PrepareAPIData {
                 .builder()
                 .name(GenerateTestData.generateName())
                 .price(GenerateTestData.generatePrice())
-                .category(GenerateTestData.generateCategory())
                 .build();
     }
 }
