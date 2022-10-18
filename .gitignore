@@ -164,3 +164,4 @@ buildNumber.properties
 /.idea/
 /src/test/allure-results/
 /MoodPanda.iml
+/allure-results/
