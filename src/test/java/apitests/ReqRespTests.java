@@ -64,6 +64,18 @@ public class ReqRespTests {
     @Test
     public void getAllProductsTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
+        List<ObjectData> allProducts = given()
+                .when()
+                .contentType(ContentType.JSON)
+                .header("token", Credentials.TOKEN)
+                .get(Urls.URL_ALL_PRODUCTS)
+                .then().log().all()
+                .extract().body().jsonPath().getList("data", ObjectData.class);
+    }
+
+    @Test
+    public void getProductByQueryTest() {
+        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         List<ProductsData> allProducts = given()
                 .when()
                 .contentType(ContentType.JSON)
@@ -71,38 +83,6 @@ public class ReqRespTests {
                 .get(Urls.URL_ALL_PRODUCTS)
                 .then().log().all()
                 .extract().body().jsonPath().getList("data", ProductsData.class);
-
     }
-//    List<UserData> users = given()
-//                .when()
-//                .contentType(ContentType.JSON)
-//                .header("token", Credentials.TOKEN)
-//                .get(Urls.URL_ALL_PRODUCTS)
-//                .then().log().all()
-//                .extract().body().jsonPath().getList("data",UserData.class)
-
-
-//    @Test(priority = 2)
-//    public void deleteProjectTest() {
-//        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
-//        ProjectAPIModel projectAPIModel = PrepareAPIData.getProjectCode();
-//        projectCode = String.valueOf(given()
-//                .body(projectAPIModel)
-//                .when()
-//                .header("token", Credentials.TOKEN)
-//                .delete(String.format(Urls.DELETE_API_PROJECT, "APITEST"))
-//                .then()
-//                .body("status", equalTo(true)));
-//    }
-//
-//    @Test(priority = 2)
-//    public void getAllProjectsNegativeTest() {
-//        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecError404());
-//        given()
-//                .when()
-//                .get(Urls.GET_ALL_PROJECTSWrong)
-//                .then()
-//                .log().body();
-//}
 }
 

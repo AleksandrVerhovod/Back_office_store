@@ -18,9 +18,13 @@ public class GenerateTestData {
         return faker.name().firstName();
     }
 
-    public static String generateJob() {
+    public static Integer generatePrice() {
         faker = new Faker();
-        return faker.job().title();
+        return faker.number().randomDigitNotZero();
+    }
+    public static String generateCategory() {
+        faker = new Faker();
+        return faker.pokemon().name();
     }
 
 }
