@@ -18,8 +18,8 @@ import static io.restassured.RestAssured.given;
 
 
 public class ReqRespTests {
-
-    @Test
+String token;
+    @Test (priority = 1)
     public void registrationUserTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         Register user = PrepareAPIData.getRegistrationData();
@@ -28,11 +28,11 @@ public class ReqRespTests {
                 .body(user)
                 .post(Urls.URL_REG_USER)
                 .then().log().all()
-                .extract().as(UserData.class);
-        Assert.assertEquals(userData.getMessage(), Messages.REG_USER);
+                .extract().body().jsonPath().getObject("data", UserData.class);
+        Assert.assertEquals(userData.getEmail(), user.getEmail());
     }
 
-    @Test
+    @Test (priority = 1)
     public void loginUserTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         LoginData loginData = new LoginData(Credentials.EMAIL, Credentials.PASSWORD);
@@ -43,6 +43,7 @@ public class ReqRespTests {
                 .post(Urls.URL_LOGIN_USER)
                 .then().log().all()
                 .extract().as(LoginUserData.class);
+//         = loginUserData.getToken();
         Assert.assertEquals(loginUserData.getMessage(), Messages.LOGIN);
     }
 
@@ -82,7 +83,6 @@ public class ReqRespTests {
     public void сreateOneProductTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK201());
         ProductDataReq productDataReq = PrepareAPIData.getProductData();
-        String nameProduct = productDataReq.getName();
         ProductDataResp addedProduct = given()
                 .auth()
                 .preemptive()
@@ -91,14 +91,14 @@ public class ReqRespTests {
                 .when()
                 .post(Urls.URL_PRODUCT)
                 .then().log().body()
-                .extract().as(ProductDataResp.class);
-        Assert.assertEquals(addedProduct.getName(), nameProduct);
+                .extract().body().jsonPath().getObject("data", ProductDataResp.class);
+        Assert.assertEquals(addedProduct.getName(), productDataReq.getName());
     }
 
     @Test
     public void deleteOneProductTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
-        String idProduct = "6356f08085bc08351e446da9";
+        String idProduct = "635704b385bc08351e446de3";
         String expectedMessage = String.format(Messages.DELETE_PRODUCT, idProduct);
         DeleteProductRequest deleteProductRequest = PrepareAPIData.deleteProductData(idProduct);
         DeleteProductResp deleteProduct = given()
@@ -113,15 +113,15 @@ public class ReqRespTests {
         Assert.assertEquals(deleteProduct.getMessage(), expectedMessage);
     }
 
-    //    @Test
-//    public void logoutUserTest() {
-//        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
-//        given()
-//                .auth()
-//                .preemptive()
-//                .oauth2(Credentials.TOKEN)
-//                .when()
-//                .get(Urls.URL_LOGOUT_USER)
-//                .then().log().all();
-//    }
+        @Test
+    public void logoutUserTest() {
+        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
+        given()
+                .auth()
+                .preemptive()
+                .oauth2(Credentials.TOKEN)
+                .when()
+                .get(Urls.URL_LOGOUT_USER)
+                .then().log().all();
+    }
 }

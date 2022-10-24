@@ -7,9 +7,9 @@ import lombok.Data;
 @Builder
 public class ProductDataReq {
 
-    public String name;
-    public String price;
-    public String category;
+    private String name;
+    private String price;
+    private String category;
 
     public ProductDataReq(String name, String price, String category) {
         this.name = name;

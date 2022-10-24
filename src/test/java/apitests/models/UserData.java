@@ -1,18 +1,19 @@
 package apitests.models;
 
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
 public class UserData {
-    public String status;
-    public int code;
-    public String message;
+    private String name;
+    private String email;
 
 
-    public String getMessage() {
-        return message;
+    public UserData(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 
-    public UserData(String status, int code, String message) {
-        this.status = status;
-        this.code = code;
-        this.message = message;
-    }
+
 }

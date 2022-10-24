@@ -8,10 +8,10 @@ import java.util.List;
 @Data
 @Builder
 public class ProductDataResp{
-    public String name;
-    public String price;
-    public String category;
-    public String owner;
+    private String name;
+    private String price;
+    private String category;
+    private String owner;
 
     public ProductDataResp(String name, String price, String category, String owner) {
         this.name = name;

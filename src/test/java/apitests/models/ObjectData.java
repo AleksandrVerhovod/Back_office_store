@@ -6,10 +6,10 @@ import lombok.Data;
 @Data
 @Builder
 public class ObjectData {
-    public String _id;
-    public String name;
-    public Integer price;
-    public String owner;
+    private String _id;
+    private String name;
+    private Integer price;
+    private String owner;
 
     public ObjectData(String _id, String name, Integer price, String owner) {
         this._id = _id;
