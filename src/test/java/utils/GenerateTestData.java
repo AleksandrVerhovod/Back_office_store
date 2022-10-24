@@ -18,7 +18,7 @@ public class GenerateTestData {
         return faker.name().firstName();
     }
 
-    public static Integer generatePrice() {
+    public static int generatePrice() {
         faker = new Faker();
         return faker.number().randomDigitNotZero();
     }

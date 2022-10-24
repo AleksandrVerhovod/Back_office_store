@@ -15,9 +15,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.authentication.FormAuthConfig.formAuthConfig;
-import static io.restassured.authentication.FormAuthConfig.springSecurity;
-import static org.hamcrest.Matchers.equalTo;
 
 
 public class ReqRespTests {
@@ -50,15 +47,18 @@ public class ReqRespTests {
     }
 
     @Test
-    public void logoutUserTest() {
+    public void getProductByQueryTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
-        given()
+        List<ObjectData> queryProducts = given()
                 .auth()
                 .preemptive()
                 .oauth2(Credentials.TOKEN)
                 .when()
-                .get(Urls.URL_LOGOUT_USER)
-                .then().log().all();
+                .get(Urls.URL_VALID_QUERY_PRODUCT)
+                .then().log().body()
+                .extract().body().jsonPath().getList("data", ObjectData.class);
+        List<String> products = queryProducts.stream().map(ObjectData::getName).collect(Collectors.toList());
+        Assert.assertEquals(products, DataConstants.QUERY_PRODUCTS());
     }
 
     @Test
@@ -79,18 +79,49 @@ public class ReqRespTests {
     }
 
     @Test
-    public void getProductByQueryTest() {
-        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
-        List<ObjectData> queryProducts = given()
+    public void сreateOneProductTest() {
+        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK201());
+        ProductDataReq productDataReq = PrepareAPIData.getProductData();
+        String nameProduct = productDataReq.getName();
+        ProductDataResp addedProduct = given()
                 .auth()
                 .preemptive()
                 .oauth2(Credentials.TOKEN)
+                .body(productDataReq)
                 .when()
-                .get(Urls.URL_VALID_QUERY_PRODUCT)
+                .post(Urls.URL_PRODUCT)
                 .then().log().body()
-                .extract().body().jsonPath().getList("data", ObjectData.class);
-        List<String> products = queryProducts.stream().map(ObjectData::getName).collect(Collectors.toList());
-        Assert.assertEquals(DataConstants.QUERY_PRODUCTS(), queryProducts);
+                .extract().as(ProductDataResp.class);
+        Assert.assertEquals(addedProduct.getName(), nameProduct);
     }
-}
 
+    @Test
+    public void deleteOneProductTest() {
+        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
+        String idProduct = "6356f08085bc08351e446da9";
+        String expectedMessage = String.format(Messages.DELETE_PRODUCT, idProduct);
+        DeleteProductRequest deleteProductRequest = PrepareAPIData.deleteProductData(idProduct);
+        DeleteProductResp deleteProduct = given()
+                .auth()
+                .preemptive()
+                .oauth2(Credentials.TOKEN)
+                .body(deleteProductRequest)
+                .when()
+                .delete(Urls.URL_PRODUCT)
+                .then().log().body()
+                .extract().as(DeleteProductResp.class);
+        Assert.assertEquals(deleteProduct.getMessage(), expectedMessage);
+    }
+
+    //    @Test
+//    public void logoutUserTest() {
+//        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
+//        given()
+//                .auth()
+//                .preemptive()
+//                .oauth2(Credentials.TOKEN)
+//                .when()
+//                .get(Urls.URL_LOGOUT_USER)
+//                .then().log().all();
+//    }
+}
