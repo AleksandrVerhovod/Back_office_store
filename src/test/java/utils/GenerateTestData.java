@@ -6,7 +6,7 @@ public class GenerateTestData {
     public static Faker faker;
     public static String generateEmail() {
         faker = new Faker();
-        return faker.letterify("???????????@grood.com");
+        return faker.letterify("???????????@test.com");
     }
 
     public static String generatePassword() {

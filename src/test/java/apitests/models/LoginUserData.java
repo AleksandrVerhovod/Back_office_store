@@ -13,4 +13,8 @@ public class LoginUserData {
         this.message = message;
         this.token = token;
     }
+
+    public LoginUserData(String token) {
+        this.token = token;
+    }
 }
