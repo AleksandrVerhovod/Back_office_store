@@ -1,0 +1,13 @@
+[
+  {
+    "_id": "635ae51765a86ac1a8e420b1",
+    "name": "Melissia",
+    "price": 8,
+    "category": [
+      "Porygon"
+    ],
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-10-27T20:07:51.143Z",
+    "updatedAt": "2022-10-27T20:07:51.143Z"
+  }
+]

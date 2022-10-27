@@ -16,7 +16,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -27,13 +26,10 @@ import static org.hamcrest.Matchers.notNullValue;
 
 public class ReqRespTests {
 
-    private static String id;
-    private static String newProduct;
-
-    @Test(priority = 1)
+    @Test(priority = 1, enabled = false)
     public void registrationUserTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
-        Register user = PrepareAPIData.getRegistrationData();
+        RegisterModel user = PrepareAPIData.getRegistrationData();
         Response response = given()
                 .when()
                 .body(user)
@@ -49,14 +45,14 @@ public class ReqRespTests {
     @Test(priority = 1)
     public void loginUserTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
-        LoginData loginData = new LoginData(Credentials.EMAIL, Credentials.PASSWORD);
-        LoginUserData loginUserData = given()
+        LoginUserRequestModel loginData = new LoginUserRequestModel(Credentials.EMAIL, Credentials.PASSWORD);
+        LoginUserResponseModel loginUserData = given()
                 .body(loginData)
                 .when()
                 .contentType(ContentType.JSON)
                 .post(Urls.URL_LOGIN_USER)
                 .then().log().all()
-                .extract().as(LoginUserData.class);
+                .extract().as(LoginUserResponseModel.class);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("src/test/resources/LoginUser.json")) {
             gson.toJson(loginUserData, writer);
@@ -66,7 +62,7 @@ public class ReqRespTests {
         Assert.assertEquals(loginUserData.getMessage(), Messages.LOGIN);
     }
 
-    @Test
+    @Test (priority = 2)
     public void getAllProductsTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String loginToken = PrepareAPIData.getUserToken();
@@ -86,16 +82,16 @@ public class ReqRespTests {
         Assert.assertEquals(DataConstants.PRODUCTS(), products);
     }
 
-    @Test
+    @Test (priority = 3)
     public void addOneProductTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK201());
-        ProductDataReq productDataReq = PrepareAPIData.getProductData();
+        CreatedProductModel createdProductModel = PrepareAPIData.getCreatedProductData();
         String loginToken = PrepareAPIData.getUserToken();
         Response response = given()
                 .auth()
                 .preemptive()
                 .oauth2(loginToken)
-                .body(productDataReq)
+                .body(createdProductModel)
                 .when()
                 .post(Urls.URL_PRODUCT)
                 .then().log().body()
@@ -108,10 +104,10 @@ public class ReqRespTests {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Assert.assertEquals(PrepareAPIData.getProductName(), productDataReq.getName());
+        Assert.assertEquals(PrepareAPIData.getProductName(), createdProductModel.getName());
     }
 
-    @Test
+    @Test (priority = 4)
     public void getProductByQueryTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String loginToken = PrepareAPIData.getUserToken();
@@ -125,37 +121,54 @@ public class ReqRespTests {
                 .body("data.id", notNullValue())
                 .extract().response();
         JsonPath jsonPath = response.jsonPath();
-        List <ObjectData> productJson = jsonPath.getList("data[0].");
+        List<ProductDataResponseModel> productJson = jsonPath.getList("data");
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        try (FileWriter writer = new FileWriter("src/test/resources/Product.json")) {
+        try (FileWriter writer = new FileWriter("src/test/resources/ProductForEdit.json")) {
             gson.toJson(productJson, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    @Test (priority = 5, enabled = false)
+    public void updateOneProductTest() throws FileNotFoundException {
+        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK201());
+        ProductDataRequestModel productDataReq = PrepareAPIData.getProductData();
+        String loginToken = PrepareAPIData.getUserToken();
+        ProductDataResponseModel updateProduct = given()
+                .auth()
+                .preemptive()
+                .oauth2(loginToken)
+               .log().all()
+       .and()
+       .body(productDataReq)
+       .when()
+       .put("*******")
+       .then()
+       .log().all()
+                .extract().body().jsonPath().getObject("data", ProductDataResponseModel.class);
+        Assert.assertEquals(updateProduct.getName(), productDataReq.getName());
+    }
 
-
-    @Test
+    @Test (priority = 6)
     public void deleteOneProductTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String idProduct = PrepareAPIData.getProductId();
         String loginToken = PrepareAPIData.getUserToken();
         String expectedMessage = String.format(Messages.DELETE_PRODUCT, idProduct);
-
-        DeleteProductResp deleteProduct = given()
+        DeleteProductRequestModel deleteProductRequest = PrepareAPIData.deleteProductData(idProduct);
+        DeleteProductResponseModel deleteProduct = given()
                 .auth()
                 .preemptive()
                 .oauth2(loginToken)
-                .body(idProduct)
+                .body(deleteProductRequest)
                 .when()
                 .delete(Urls.URL_PRODUCT)
                 .then().log().body()
-                .extract().as(DeleteProductResp.class);
+                .extract().as(DeleteProductResponseModel.class);
         Assert.assertEquals(deleteProduct.getMessage(), expectedMessage);
     }
-
-    @Test
+       @Test (priority = 7)
     public void logoutUserTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String loginToken = PrepareAPIData.getUserToken();
