@@ -1,0 +1,15 @@
+{
+  "name": "Hettie",
+  "price": 8,
+  "quantity": 123,
+  "category": [
+    "Metapod"
+  ],
+  "discountPrice": 0,
+  "vendor": "000",
+  "art": "000035",
+  "owner": "AQATest@mail.com",
+  "_id": "636a96bfc034f902db6fec72",
+  "createdAt": "2022-11-08T17:49:51.416Z",
+  "updatedAt": "2022-11-08T17:49:51.416Z"
+}

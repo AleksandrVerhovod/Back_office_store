@@ -11,8 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ProductDataRequestModel {
 
+    private String id;
     private String name;
-    private String price;
+    private Integer price;
+    private Integer quantity;
     private String category;
-
+    private Integer discountPrice;
 }

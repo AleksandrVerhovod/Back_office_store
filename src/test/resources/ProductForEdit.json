@@ -1,13 +1,17 @@
 [
   {
-    "_id": "635ae51765a86ac1a8e420b1",
-    "name": "Melissia",
+    "_id": "636a96bfc034f902db6fec72",
+    "name": "Hettie",
     "price": 8,
+    "quantity": 123,
     "category": [
-      "Porygon"
+      "Metapod"
     ],
+    "discountPrice": 0,
+    "vendor": "000",
+    "art": "000035",
     "owner": "AQATest@mail.com",
-    "createdAt": "2022-10-27T20:07:51.143Z",
-    "updatedAt": "2022-10-27T20:07:51.143Z"
+    "createdAt": "2022-11-08T17:49:51.416Z",
+    "updatedAt": "2022-11-08T17:49:51.416Z"
   }
 ]

@@ -11,7 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreatedProductModel {
     private String name;
-    private String price;
+    private Integer price;
+    private Integer quantity;
+    private String unit;
     private String category;
-    private String owner;
+    private Integer discountPrice;
 }

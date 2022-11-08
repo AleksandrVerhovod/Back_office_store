@@ -16,9 +16,13 @@ public class ProductDataResponseModel {
     private String _id;
     private String name;
     private Integer price;
+    private Float quantity;
     private ArrayList<String> category;
+    private String vendor;
+    private String art;
     private String owner;
     private Date createdAt;
     private Date updatedAt;
+    private Integer discountPrice;
 
 }

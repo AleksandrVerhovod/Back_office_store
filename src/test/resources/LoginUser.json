@@ -1,4 +1,5 @@
 {
   "message": "login successfull",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNTZhNWNhODM3NGQ1ZThhMDIwZDk2NSIsImlhdCI6MTY2NjkwMTI2OH0.H8HdZKM-bJqCTLxVUXxe4FF80RjrL1T0v22u4czdgeA"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNTZhNWNhODM3NGQ1ZThhMDIwZDk2NSIsImlhdCI6MTY2NzkyNjM0M30.NLq_uGDQovjzWCnFki75El2eZMiyihrGdjfbUwM7rS4",
+  "role": "admin"
 }
