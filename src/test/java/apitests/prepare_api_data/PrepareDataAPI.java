@@ -4,7 +4,6 @@ import apitests.models.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import utils.GenerateTestData;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -47,5 +46,18 @@ public class PrepareDataAPI {
         return yourClassList.iterator().next().getVendor();
     }
 
-
+    public static String getDiscountByPrice() throws FileNotFoundException {
+        Reader reader = new FileReader("src/test/resources/DiscountList.json");
+        Type listType = new TypeToken<ArrayList<DiscountResponseModel>>() {
+        }.getType();
+        List<DiscountResponseModel> yourClassList = new Gson().fromJson(reader, listType);
+        return String.valueOf(yourClassList.iterator().next().getPrice());
+    }
+    public static String getDiscountByVendor() throws FileNotFoundException {
+        Reader reader = new FileReader("src/test/resources/DiscountList.json");
+        Type listType = new TypeToken<ArrayList<DiscountResponseModel>>() {
+        }.getType();
+        List<DiscountResponseModel> yourClassList = new Gson().fromJson(reader, listType);
+        return String.valueOf(yourClassList.iterator().next().getVendor());
+    }
 }

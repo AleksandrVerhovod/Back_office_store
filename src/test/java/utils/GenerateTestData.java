@@ -1,6 +1,7 @@
 package utils;
 
 import com.github.javafaker.Faker;
+import constants.Category;
 import constants.Units;
 
 import java.util.List;
@@ -40,6 +41,11 @@ public class GenerateTestData {
     public static String getUnit() {
         List<String> getUnit = Units.getUnit();
         return getUnit.get(getRandomIndex(getUnit.size()));
+    }
+
+    public static String getCategory() {
+        List<String> getCategory = Category.getCategory();
+        return getCategory.get(getRandomIndex(getCategory.size()));
     }
 
     public static int generateDiscountPrice() {

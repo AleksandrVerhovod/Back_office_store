@@ -1,0 +1,99 @@
+[
+  {
+    "_id": "635b6b1eb04b0218629ff78b",
+    "name": "bicycle",
+    "price": 8000,
+    "quantity": 2,
+    "category": [
+      "sport",
+      "transport"
+    ],
+    "vendor": "000",
+    "art": "000003",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:39:42.770Z",
+    "updatedAt": "2022-11-07T14:05:46.851Z",
+    "discountPrice": 6400
+  },
+  {
+    "_id": "635b6ba001147105ac59af5a",
+    "name": "mounting byke",
+    "price": 12000,
+    "quantity": 2,
+    "category": [
+      "sport",
+      "transport"
+    ],
+    "vendor": "000",
+    "art": "000004",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:41:52.894Z",
+    "updatedAt": "2022-11-07T14:05:46.851Z",
+    "discountPrice": 9600
+  },
+  {
+    "_id": "635b6d2801147105ac59af74",
+    "name": "ball",
+    "price": 850,
+    "quantity": 5,
+    "category": [
+      "sport",
+      "toys"
+    ],
+    "vendor": "000",
+    "art": "000007",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:48:24.899Z",
+    "updatedAt": "2022-11-07T14:05:46.851Z",
+    "discountPrice": 680
+  },
+  {
+    "_id": "635b6e4858905712190f369a",
+    "name": "gym ball",
+    "price": 520,
+    "quantity": 2,
+    "category": [
+      "sport",
+      "toys"
+    ],
+    "vendor": "000",
+    "art": "0000008",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:53:12.567Z",
+    "updatedAt": "2022-11-07T14:19:08.168Z",
+    "discountPrice": 416,
+    "unit": "pcs"
+  },
+  {
+    "_id": "635f793bea358c32f1a84251",
+    "name": "gym bar",
+    "price": 900,
+    "quantity": 6,
+    "category": [
+      "sport",
+      "toys"
+    ],
+    "vendor": "000",
+    "art": "000009",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-31T07:28:59.106Z",
+    "updatedAt": "2022-11-07T14:05:46.851Z",
+    "discountPrice": 720
+  },
+  {
+    "_id": "635f799bea358c32f1a84259",
+    "name": "gym bar cross",
+    "price": 900,
+    "quantity": 6,
+    "category": [
+      "sport",
+      "toys"
+    ],
+    "vendor": "001",
+    "art": "000010",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-31T07:30:35.369Z",
+    "updatedAt": "2022-11-07T14:05:46.851Z",
+    "discountPrice": 720
+  }
+]

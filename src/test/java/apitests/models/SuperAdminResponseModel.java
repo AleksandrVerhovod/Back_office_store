@@ -10,11 +10,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterModel {
-    private String name;
-    private String email;
-    private String password;
-    @JsonProperty("super password")
-    private String superPassword;
-
+public class SuperAdminResponseModel {
+    public int articul;
+    @JsonProperty("V")
+    public int v;
+    public String role;
+    public String superPass;
 }
