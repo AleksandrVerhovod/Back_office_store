@@ -1,8 +1,8 @@
 package utils;
 
 import com.github.javafaker.Faker;
-import constants.Category;
-import constants.Units;
+import constants.api.Category;
+import constants.api.Units;
 
 import java.util.List;
 import java.util.Random;
