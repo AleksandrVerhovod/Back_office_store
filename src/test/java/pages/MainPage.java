@@ -1,5 +1,7 @@
 package pages;
 
+import constants.Urls;
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +17,9 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//a[@href='/register']")
     private WebElement LINK_REGISTRATION;
 
+    @FindBy(xpath = "//div[contains(@class,'Logo_contentWrapper')]")
+    private WebElement LOGO;
+
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -22,10 +27,20 @@ public class MainPage extends BasePage {
 
     @Override
     public boolean isPageOpened() {
-        return false;
+        LOGGER.debug(String.format("Attempt to find button: %s", LOGO));
+        return LOGO.isDisplayed();
     }
-
-
+    @Step("Open login page")
+    public MainPage openMainPage() {
+        LOGGER.debug(String.format("Attempt to open URL: %s", Urls.URL_BACK_OFFICE_OPEN));
+        driver.get(Urls.URL_BACK_OFFICE_OPEN);
+        return this;
+    }
+    public LoginPage clickLoginLink() {
+        LOGGER.debug(String.format("Attempt to click link: %s", LINK_LOGIN));
+        LINK_LOGIN.click();
+        return new LoginPage(driver);
+    }
 
 
 }

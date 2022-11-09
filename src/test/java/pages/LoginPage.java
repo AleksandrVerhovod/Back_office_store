@@ -79,4 +79,6 @@ public class LoginPage extends BasePage {
         LOGGER.debug(String.format("Attempt to find message: %s", ERROR_LOGIN));
         return ERROR_LOGIN.isDisplayed();
     }
+
+
 }

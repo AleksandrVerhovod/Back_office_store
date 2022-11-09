@@ -22,6 +22,7 @@ public class Urls {
     public static String URL_DISCOUNT_SEARCH_BY_VENDOR = "/products/discount?vendor=%s";
 
     //UI
+    public static String URL_BACK_OFFICE_OPEN = "https://junion-backoffice.vercel.app";
     public static String URL_BACK_OFFICE_MAIN = "https://junion-backoffice.vercel.app%s";
     public static String URL_BACK_OFFICE_LOGIN = "/login";
     public static String URL_BACK_OFFICE_REGISTR = "/register";
