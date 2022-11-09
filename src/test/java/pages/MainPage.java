@@ -42,5 +42,11 @@ public class MainPage extends BasePage {
         return new LoginPage(driver);
     }
 
+    public LoginPage clickSignUpLink() {
+        LOGGER.debug(String.format("Attempt to click link: %s", LINK_REGISTRATION));
+        LINK_REGISTRATION.click();
+        return new LoginPage(driver);
+    }
+
 
 }

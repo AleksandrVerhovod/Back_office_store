@@ -8,13 +8,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.MainPage;
+import pages.SignUpPage;
 import testdata.PrepareLoginData;
 
 public class MainPageTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(LoginTest.class.getName());
 
     @Test
-    @Description("The user login with empty password and email fields")
+    @Description("Open Log In page")
     public void clickLoginTest() {
         MainPage mainPage = new MainPage(getDriver());
         LOGGER.info(String.format("Page %s initialized", MainPage.class.getName()));
@@ -24,5 +25,18 @@ public class MainPageTest extends BaseTest {
                 .clickLoginLink();
         LOGGER.info("Check if page is displayed");
         Assert.assertTrue(loginPage.isPageOpened());
+    }
+
+    @Test
+    @Description("Open Sign Up page")
+    public void clickSignUpTest() {
+        MainPage mainPage = new MainPage(getDriver());
+        LOGGER.info(String.format("Page %s initialized", MainPage.class.getName()));
+        SignUpPage signUpPage = new SignUpPage(getDriver());
+        LOGGER.info(String.format("Page %s initialized", SignUpPage.class.getName()));
+        mainPage.openMainPage()
+                .clickSignUpLink();
+        LOGGER.info("Check if page is displayed");
+        Assert.assertTrue(signUpPage.isPageOpened());
     }
 }
