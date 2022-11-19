@@ -16,4 +16,5 @@ public class CreatedProductModel {
     private String unit;
     private String category;
     private Integer discountPrice;
+    private Integer vendor;
 }

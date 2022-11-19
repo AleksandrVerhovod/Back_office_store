@@ -1,0 +1,5 @@
+{
+  "message": "login successfull",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNWJjNWFjNjVjMDBiZTVlOTFjOWI3OSIsImlhdCI6MTY2ODg5NjMxMX0.XWcnaYGqV8GoVVcClKp91dSQhJzzX0pTpk-qtSEwcoU",
+  "role": "superadmin"
+}

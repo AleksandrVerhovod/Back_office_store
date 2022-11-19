@@ -14,7 +14,7 @@ public class RegisterModel {
     private String name;
     private String email;
     private String password;
-    @JsonProperty("super password")
-    private String superPassword;
+//    @JsonProperty("super password")
+    private String superCode;
 
 }

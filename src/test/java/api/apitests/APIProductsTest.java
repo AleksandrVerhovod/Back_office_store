@@ -194,8 +194,8 @@ public class APIProductsTest {
         String idProduct = PrepareDataAPI.getProductId();
         String loginToken = PrepareDataAPI.getUserToken();
         String expectedMessage = String.format(Messages.DELETE_PRODUCT, idProduct);
-        DeleteProductRequestModel deleteProductRequest = PrepareProductDataAPI.deleteProductData(idProduct);
-        DeleteProductResponseModel deleteProduct = given()
+        DeleteByIdModel deleteProductRequest = PrepareProductDataAPI.deleteProductData(idProduct);
+        DeleteResponseModel deleteProduct = given()
                 .auth()
                 .preemptive()
                 .oauth2(loginToken)
@@ -203,7 +203,7 @@ public class APIProductsTest {
                 .when()
                 .delete(Urls.URL_PRODUCT)
                 .then().log().body()
-                .extract().as(DeleteProductResponseModel.class);
+                .extract().as(DeleteResponseModel.class);
         Assert.assertEquals(deleteProduct.getMessage(), expectedMessage);
     }
 }

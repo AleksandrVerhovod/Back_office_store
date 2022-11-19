@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SuperAdminPutRequestModel {
-    public String superPass;
-    public String role;
+    private String superPass;
+    private String role;
 }

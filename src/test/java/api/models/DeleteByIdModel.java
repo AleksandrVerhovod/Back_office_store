@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginUserResponseModel {
-    private String message;
-    private String token;
-    private String role;
+public class DeleteByIdModel {
+    private String id;
 }

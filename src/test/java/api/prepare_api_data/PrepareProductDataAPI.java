@@ -1,7 +1,7 @@
 package api.prepare_api_data;
 
 import api.models.CreatedProductModel;
-import api.models.DeleteProductRequestModel;
+import api.models.DeleteByIdModel;
 import api.models.ProductDataRequestModel;
 import utils.GenerateTestData;
 
@@ -32,8 +32,8 @@ public class PrepareProductDataAPI {
                 .build();
     }
 
-    public static DeleteProductRequestModel deleteProductData(String string) {
-        return DeleteProductRequestModel
+    public static DeleteByIdModel deleteProductData(String string) {
+        return DeleteByIdModel
                 .builder()
                 .id(string)
                 .build();

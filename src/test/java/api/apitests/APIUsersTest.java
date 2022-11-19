@@ -25,7 +25,7 @@ import static org.hamcrest.Matchers.notNullValue;
 public class APIUsersTest {
     @Test(priority = 1)
     public void registrationUserTest() {
-        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
+        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK201());
         RegisterModel user = PrepareRegistrationDataAPI.getValidRegistrationAdminData();
         Response response = given()
                 .when()
@@ -35,7 +35,7 @@ public class APIUsersTest {
                 .body("message", equalTo(Messages.REG_USER))
                 .extract().response();
         JsonPath jsonPath = response.jsonPath();
-        String regUser = jsonPath.get("data.email");
+        String regUser = jsonPath.get("user.email");
         Assert.assertEquals(regUser, user.getEmail());
     }
 

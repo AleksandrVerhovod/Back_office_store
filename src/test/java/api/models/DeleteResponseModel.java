@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeleteProductResponseModel {
+public class DeleteResponseModel {
     private String message;
 
 }

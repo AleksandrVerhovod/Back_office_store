@@ -5,13 +5,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginUserRequestModel {
+public class UserInfoResponseModel {
+    private String _id;
+    private String name;
     private String email;
-    private String password;
-
-
+    private Date createdAt;
+    private Date updatedAt;
+    private String admin;
 }

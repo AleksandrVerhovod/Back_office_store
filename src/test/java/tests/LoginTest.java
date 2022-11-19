@@ -5,6 +5,7 @@ import models.LoginModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import testdata.PrepareLoginData;
@@ -26,4 +27,5 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.isEmailErrorMessageDisplayed());
         Assert.assertTrue(loginPage.isPasswordErrorMessageDisplayed());
     }
+
 }

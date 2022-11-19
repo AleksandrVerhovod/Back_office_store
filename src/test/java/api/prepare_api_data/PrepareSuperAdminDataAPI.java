@@ -8,7 +8,7 @@ public class PrepareSuperAdminDataAPI {
         return SuperAdminPutRequestModel.builder().build()
                 .builder()
                 .superPass("777")
-                .role("super admin")
+                .role("admin")
                 .build();
     }
 }

@@ -168,3 +168,6 @@ buildNumber.properties
 /allure-results/
 /allure-results/
 /resources/registration.json
+/src/test/java/constants/AcceptedRegData.java
+/src/test/java/testdata/ParametersDataEmail
+/src/test/java/constants/dataprovider/

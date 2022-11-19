@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SuperAdminResponseModel {
-    public int articul;
+    private int articul;
     @JsonProperty("V")
-    public int v;
-    public String role;
-    public String superPass;
+    private int v;
+    private String role;
+    private String superPass;
 }

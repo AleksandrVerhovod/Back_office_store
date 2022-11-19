@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeleteProductRequestModel {
-    private String id;
+public class PutRoleAndSuperPassModel {
+    private String superPass;
+    private String role;
 }

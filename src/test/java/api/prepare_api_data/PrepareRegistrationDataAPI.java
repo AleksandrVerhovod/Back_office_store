@@ -10,8 +10,8 @@ public class PrepareRegistrationDataAPI {
                 .builder()
                 .name(GenerateTestData.generateName())
                 .email(GenerateTestData.generateEmail())
-                .password(GenerateTestData.generatePassword())
-                .superPassword(Credentials.superPassword)
+                .password(GenerateTestData.generateMinPassword())
+                .superCode(Credentials.SUPER_CODE)
                 .build();
     }
 }

@@ -23,6 +23,14 @@ public class PrepareDataAPI {
         return json;
     }
 
+    public static String getSuperToken() throws FileNotFoundException {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Reader reader = new FileReader("src/test/resources/LoginSuperUser.json");
+        String json = gson.fromJson(reader, LoginUserResponseModel.class).getToken();
+        return json;
+    }
+
+
     public static String getProductName() throws FileNotFoundException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Reader reader = new FileReader("src/test/resources/NewProduct.json");
@@ -44,6 +52,26 @@ public class PrepareDataAPI {
         }.getType();
         List<ProductDataResponseModel> yourClassList = new Gson().fromJson(reader, listType);
         return yourClassList.iterator().next().getVendor();
+    }
+
+    public static String getVendorName() throws FileNotFoundException {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Reader reader = new FileReader("src/test/resources/NewVendor.json");
+        String json = gson.fromJson(reader, VendorResponseModel.class).getName();
+        return json;
+    }
+    public static String getVendorId() throws FileNotFoundException {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Reader reader = new FileReader("src/test/resources/NewVendor.json");
+        String json = gson.fromJson(reader, VendorResponseModel.class).get_id();
+        return json;
+    }
+    public static String getUserId() throws FileNotFoundException {
+        Reader reader = new FileReader("src/test/resources/ListOfUsers.json");
+        Type listType = new TypeToken<ArrayList<UserInfoResponseModel>>() {
+        }.getType();
+        List<UserInfoResponseModel> yourClassList = new Gson().fromJson(reader, listType);
+        return yourClassList.stream().skip(yourClassList.size() - 1).findFirst().get().get_id();
     }
 
     public static String getDiscountByPrice() throws FileNotFoundException {
