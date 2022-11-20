@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Feature;
 import jdk.jfr.Description;
 import models.LoginModel;
 import org.apache.log4j.LogManager;
@@ -10,7 +11,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import testdata.PrepareLoginData;
 
-
+@Feature("Authorization")
 public class LoginTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(LoginTest.class.getName());
 

@@ -77,7 +77,7 @@ public class APISuperAdminTest {
                 .oauth2(loginToken)
                 .body(superAdminPutRequestModel)
                 .when()
-                .put(Urls.URL_ALL_USERS)
+                .put(Urls.URL_SUPER_USER)
                 .then()
                 .log().all()
                 .extract().response();

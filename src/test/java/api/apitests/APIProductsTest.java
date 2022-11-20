@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class APIProductsTest {
@@ -54,13 +55,9 @@ public class APIProductsTest {
                 .oauth2(loginToken)
                 .when()
                 .get(Urls.URL_ALL_PRODUCTS)
-                .then().log()
-                .body()
+                .then().log().all()
+                .body("qty", greaterThanOrEqualTo(1))
                 .extract().response();
-        JsonPath jsonPath = response.jsonPath();
-        List<String> products = jsonPath.get("data.name");
-        System.out.println(products);
-        System.out.println(DataConstants.PRODUCTS());
         JsonPath jsonPathWrite = response.jsonPath();
         List<ProductDataResponseModel> productJson = jsonPathWrite.getList("data");
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -69,7 +66,6 @@ public class APIProductsTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Assert.assertEquals(DataConstants.PRODUCTS(), products);
     }
 
     @Test(priority = 3)

@@ -12,10 +12,10 @@ public class PrepareProductDataAPI {
         return CreatedProductModel
                 .builder()
                 .name(GenerateTestData.generateName())
-                .price(GenerateTestData.generatePrice())
-                .quantity(GenerateTestData.generateQuantity())
+//                .price(GenerateTestData.generatePrice())
+//                .quantity(GenerateTestData.generateQuantity())
 //               .unit(GenerateTestData.getUnit())
-                .category(GenerateTestData.generateCategory())
+//                .category(GenerateTestData.generateCategory())
 //                .discountPrice(GenerateTestData.generateDiscountPrice())
                 .build();
     }

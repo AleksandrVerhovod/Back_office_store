@@ -1,7 +1,10 @@
 package testdata.dataprovider;
 
 import constants.Credentials;
+import io.qameta.allure.Step;
 import org.testng.annotations.DataProvider;
+import utils.GenerateEmail;
+import utils.GeneratePassword;
 import utils.GenerateTestData;
 
 public class DataProviderRegistrationClass {
@@ -16,33 +19,34 @@ public class DataProviderRegistrationClass {
                 {Credentials.MAXminus1_VALID_EMAIL, Credentials.MAXminus1_VALID_PASSWORD},
                 {Credentials.UPPERCASE_VALID_EMAIL, Credentials.VALID_PASSWORD},
                 {Credentials.WITH_SPACES_VALID_EMAIL, Credentials.WITH_SPACES_VALID_PASSWORD},
-                {Credentials.CYRILLIC_VALID_EMAIL, Credentials.VALID_PASSWORD},
+                {Credentials.CYRILLIC_VALID_EMAIL, Credentials.WITH_SPACES_VALID_PASSWORD}
         };
     }
 
     @DataProvider(name = "validRandomEmailPasswordProvider")
     public static Object[][] dataRandomValidProviderData() {
         return new Object[][]{
-                {GenerateTestData.generateEmail(), GenerateTestData.generatePassword()},
-                {GenerateTestData.generateMinEmail(), GenerateTestData.generateMinPassword()},
-                {GenerateTestData.generateMinPlus1Email(), GenerateTestData.generateMinPlus1Password()},
-                {GenerateTestData.generateMaxEmail(), GenerateTestData.generateMaxPassword()},
-                {GenerateTestData.generateMaxMinus1Email(), GenerateTestData.generateMaxMinus1Password()},
-                {GenerateTestData.generateUPPERCaseEmail(), GenerateTestData.generatePassword()},
-                {GenerateTestData.generateWithSpacesEmail(), GenerateTestData.generatePassword()},
+                {GenerateEmail.generateEmail(), GeneratePassword.generatePassword()},
+                {GenerateEmail.generateMinEmail(), GeneratePassword.generatePasswordMin()},
+                {GenerateEmail.generateEmailSpecChars(), GeneratePassword.generatePasswordMax()},
+                {GenerateEmail.generateEmailUPPERCase(), GeneratePassword.generatePasswordWithSpecChars()},
+                {GenerateEmail.generateEmailWithSpaces(), GeneratePassword.generatePasswordWithSpacesBeginAndEnd()},
+                {GenerateEmail.generateEmailMinPlus1(), GeneratePassword.generatePasswordMinPlus1()},
+                {GenerateEmail.generateEmailMaxMinus1(), GeneratePassword.generatePasswordMaxMinus1()},
+                {GenerateEmail.generateEmailWithCyrillic(), GeneratePassword.generatePassword()},
         };
     }
 
     @DataProvider(name = "notValidEmailProvider")
     public static Object[][] dataNoValidProviderEmail() {
         return new Object[][]{
-                {".testemail@mail.com"},
-                {"tesmail.com"},
-                {"testemail@mailcom"},
-                {"testemail@"},
-                {"@mail.com"},
-                {"test0test0test0test0test0test0test0test0test0test01@mail.com"},
-                {"te@mail.com"},
+                {GenerateEmail.generateEmailWithDotBegin()},
+                {GenerateEmail.generateEmailWithout_a()},
+                {GenerateEmail.generateEmailWithoutDot()},
+                {GenerateEmail.generateEmailWithEmptyLocal()},
+                {GenerateEmail.generateEmailWithEmptyDomen()},
+                {GenerateEmail.generateEmailMaxPlus1()},
+                {GenerateEmail.generateMinMinus1Email()},
                 {"           "},
                 {"<script>alert(123)</script>"},
                 {"<script>alert(«Hello, world!»)</alert>"},
@@ -50,6 +54,9 @@ public class DataProviderRegistrationClass {
                 {"«»‘~!@#$%^&*()?>,./<][ /*<!—«», «${code}»;—>"},
                 {"%%%/%%%"},
                 {""},
+                {Credentials.CYRILLIC_VALID_EMAIL},
+                {Credentials.VALID_CONST_EMAIL},
+
         };
     }
 
@@ -57,13 +64,12 @@ public class DataProviderRegistrationClass {
     public static Object[][] notValidPasswordDataProvider() {
         return new Object[][]{
                 {Credentials.VALID_CONST_EMAIL},
-                {GenerateTestData.generateMax1Password()},
-                {GenerateTestData.generateMin1Password()},
-                {GenerateTestData.generateLowerCasePassword()},
-                {GenerateTestData.generateUpperCasePassword()},
-                {GenerateTestData.generateWithoutSpecCharPassword()},
-                {GenerateTestData.generateWithoutNumberPassword()},
-                {GenerateTestData.generateWithCyrillicPassword()},
+                {GeneratePassword.generatePasswordMaxPlus1()},
+                {GeneratePassword.generatePasswordMinMinus1()},
+                {GeneratePassword.generatePasswordLowerCase()},
+                {GeneratePassword.generatePasswordWithoutSpecChar()},
+                {GeneratePassword.generatePasswordWithoutNumber()},
+                {GeneratePassword.generatePasswordWithCyrillic()},
                 {"<script>alert(123)</script>"},
                 {"          "},
                 {""},
@@ -71,6 +77,7 @@ public class DataProviderRegistrationClass {
     }
 
     @DataProvider(name = "notValidFullNameProvider")
+
     public static Object[][] notValidFullNameDataProvider() {
         return new Object[][]{
                 {GenerateTestData.generateMinMinus1FullName()},

@@ -1,6 +1,5 @@
 package utils;
 
-import io.qameta.allure.Attachment;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -11,22 +10,29 @@ import tests.BaseTest;
 public class TestListeners implements ITestListener {
     @Override
     public void onTestStart(ITestResult iTestResult) {
-        System.out.println("Test Started");
+        System.out.println("Test Start");
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
         System.out.println("Test Passed");
-    }
-
-    @Override
-    @Attachment()
-    public void onTestFailure(ITestResult iTestResult) {
         Object currentClass = iTestResult.getInstance();
         WebDriver driver = ((BaseTest) currentClass).getDriver();
         AllureService allureService = new AllureService();
         allureService.takeScreenshot(driver);
         allureService.getSystemName();
+        allureService.getBrowserName();
+    }
+
+    @Override
+    public void onTestFailure(ITestResult iTestResult) {
+        System.out.println("Test Fail");
+        Object currentClass = iTestResult.getInstance();
+        WebDriver driver = ((BaseTest) currentClass).getDriver();
+        AllureService allureService = new AllureService();
+        allureService.takeScreenshot(driver);
+        allureService.getSystemName();
+        allureService.getBrowserName();
     }
 
     @Override
@@ -36,6 +42,13 @@ public class TestListeners implements ITestListener {
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
+        System.out.println("Test Fail with success percentage");
+        Object currentClass = iTestResult.getInstance();
+        WebDriver driver = ((BaseTest) currentClass).getDriver();
+        AllureService allureService = new AllureService();
+        allureService.takeScreenshot(driver);
+        allureService.getSystemName();
+        allureService.getBrowserName();
     }
 
     @Override

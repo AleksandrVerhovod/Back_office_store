@@ -2,6 +2,7 @@ package api.prepare_api_data;
 
 import api.models.RegisterModel;
 import constants.Credentials;
+import utils.GeneratePassword;
 import utils.GenerateTestData;
 
 public class PrepareRegistrationDataAPI {
@@ -10,7 +11,7 @@ public class PrepareRegistrationDataAPI {
                 .builder()
                 .name(GenerateTestData.generateName())
                 .email(GenerateTestData.generateEmail())
-                .password(GenerateTestData.generateMinPassword())
+                .password(GenerateTestData.generatePassword())
                 .superCode(Credentials.SUPER_CODE)
                 .build();
     }

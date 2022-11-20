@@ -14,97 +14,18 @@ public class GenerateTestData {
         Random random = new Random();
         return random.nextInt(listSize);
     }
+
+    // ---------------EMAIL----------------------------
     public static String generateEmail() {
         faker = new Faker();
-        return faker.letterify("????????@test.com");
+        return faker.letterify("????????@test.ru");
     }
 
-    public static String generateUPPERCaseEmail() {
-        faker = new Faker();
-        return faker.letterify("TEST????????@test.com");
-    }
 
-    public static String generateWithSpacesEmail() {
-        faker = new Faker();
-        return faker.letterify(" ????????@test.com ");
-    }
-    public static String generateMinEmail() {
-        faker = new Faker();
-        return faker.letterify("???@test.com");
-    }
-
-    public static String generateMinPlus1Email() {
-        faker = new Faker();
-        return faker.letterify("????@test.com");
-    }
-    public static String generateMaxEmail() {
-        faker = new Faker();
-        return faker.letterify("??????????????????????????????????????????????????@test.com");
-    }
-
-    public static String generateMaxMinus1Email() {
-        faker = new Faker();
-        return faker.letterify("?????????????????????????????????????????????????@test.com");
-    }
+    // --------------------------PASSWORD-----------------------------
     public static String generatePassword() {
         faker = new Faker();
         return faker.letterify("??????Q@#&/!-.%$1");
-    }
-
-    public static String generateMinPassword() {
-        faker = new Faker();
-        return faker.letterify("???Q@1");
-    }
-
-    public static String generateMinPlus1Password() {
-        faker = new Faker();
-        return faker.letterify("????Q@1");
-    }
-
-    public static String generateMaxPassword() {
-        faker = new Faker();
-        return faker.letterify("?????????????????Q@1");
-    }
-
-    public static String generateMaxMinus1Password() {
-        faker = new Faker();
-        return faker.letterify("????????????????Q@1");
-    }
-
-
-    public static String generateMax1Password() {
-        faker = new Faker();
-        return faker.letterify("??????????????????Q@1");
-    }
-
-    public static String generateMin1Password() {
-        faker = new Faker();
-        return faker.letterify("Q@1??");
-    }
-
-    public static String generateLowerCasePassword() {
-        faker = new Faker();
-        return faker.letterify("string@1");
-    }
-
-    public static String generateUpperCasePassword() {
-        faker = new Faker();
-        return faker.letterify("STRING@1");
-    }
-
-    public static String generateWithoutSpecCharPassword() {
-        faker = new Faker();
-        return faker.letterify("???????Q1");
-    }
-
-    public static String generateWithoutNumberPassword() {
-        faker = new Faker();
-        return faker.letterify("???????Q@?");
-    }
-
-    public static String generateWithCyrillicPassword() {
-        faker = new Faker();
-        return faker.letterify("??????СQ@?");
     }
 
 

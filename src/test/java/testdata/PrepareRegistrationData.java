@@ -10,7 +10,7 @@ public class PrepareRegistrationData {
     private static final Logger LOGGER = LogManager.getLogger(PrepareRegistrationData.class.getName());
 
     public static RegistrationModel fillRegistrationModel(String email, String password) {
-        LOGGER.info("Generate registration valid data");
+        LOGGER.info(String.format("Generate registration with data: %s", email,password));
         return RegistrationModel
                 .builder()
                 .email(email)
@@ -22,7 +22,7 @@ public class PrepareRegistrationData {
     }
 
     public static RegistrationModel fillRegistrationWithNegativeEmailModel(String email) {
-        LOGGER.info("Generate registration with not valid emails");
+        LOGGER.info(String.format("Generate registration with Email: %s", email));
         String password = GenerateTestData.generatePassword();
         return RegistrationModel
                 .builder()
@@ -35,7 +35,7 @@ public class PrepareRegistrationData {
     }
 
     public static RegistrationModel fillRegistrationWithNegativePasswordModel(String password) {
-        LOGGER.info("Generate registration with not valid passwords");
+        LOGGER.info(String.format("Generate registration with Password: %s",password));
         return RegistrationModel
                 .builder()
                 .email(Credentials.VALID_CONST_EMAIL)
@@ -48,7 +48,7 @@ public class PrepareRegistrationData {
 
     public static RegistrationModel fillRegistrationWithNegativeFullNameModel(String fullName) {
         String password = GenerateTestData.generatePassword();
-        LOGGER.info("Generate registration with not valid full name");
+        LOGGER.info(String.format("Generate registration with Full Name: %s", fullName));
         return RegistrationModel
                 .builder()
                 .email(GenerateTestData.generateEmail())
@@ -60,7 +60,7 @@ public class PrepareRegistrationData {
     }
 
     public static RegistrationModel fillRegistrationWithNotValidConfirmPasswordModel(String confirmPassword) {
-        LOGGER.info("Generate registration with not valid confirm data");
+        LOGGER.info(String.format("Generate registration with Confirm Password: %s", confirmPassword));
         return RegistrationModel
                 .builder()
                 .email(GenerateTestData.generateEmail())
@@ -72,7 +72,7 @@ public class PrepareRegistrationData {
     }
 
     public static RegistrationModel fillRegistrationWithNotValidSuperCodeModel(String superCode) {
-        LOGGER.info("Generate registration with not valid super code");
+        LOGGER.info(String.format("Generate registration with Super Code: %s", superCode));
         String password = GenerateTestData.generatePassword();
         return RegistrationModel
                 .builder()
