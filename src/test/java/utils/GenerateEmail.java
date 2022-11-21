@@ -12,16 +12,16 @@ public class GenerateEmail {
     }
     public static String generateMinEmail() {
         faker = new Faker();
-        return faker.letterify("?@te.st");
+        return faker.letterify("?@te.ru");
     }
     public static String generateMinMinus1Email() {
         faker = new Faker();
-        return faker.letterify("?@te.s");
+        return faker.letterify("?@e.ru");
     }
 
     public static String generateEmailMinPlus1() {
         faker = new Faker();
-        return faker.letterify("??@te.st");
+        return faker.letterify("??@te.ru");
     }
 
     public static String generateEmailMax() {
@@ -84,7 +84,7 @@ public class GenerateEmail {
 
     public static String generateEmailSpecChars() {
         faker = new Faker();
-        return faker.letterify("??_??.??@test@com");
+        return faker.letterify("??_??.??@test.com");
     }
 
 

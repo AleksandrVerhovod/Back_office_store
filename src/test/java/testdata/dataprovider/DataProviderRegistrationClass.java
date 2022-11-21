@@ -4,6 +4,7 @@ import constants.Credentials;
 import io.qameta.allure.Step;
 import org.testng.annotations.DataProvider;
 import utils.GenerateEmail;
+import utils.GenerateFullName;
 import utils.GeneratePassword;
 import utils.GenerateTestData;
 
@@ -63,7 +64,6 @@ public class DataProviderRegistrationClass {
     @DataProvider(name = "notValidPasswordProvider")
     public static Object[][] notValidPasswordDataProvider() {
         return new Object[][]{
-                {Credentials.VALID_CONST_EMAIL},
                 {GeneratePassword.generatePasswordMaxPlus1()},
                 {GeneratePassword.generatePasswordMinMinus1()},
                 {GeneratePassword.generatePasswordLowerCase()},
@@ -76,19 +76,6 @@ public class DataProviderRegistrationClass {
         };
     }
 
-    @DataProvider(name = "notValidFullNameProvider")
-
-    public static Object[][] notValidFullNameDataProvider() {
-        return new Object[][]{
-                {GenerateTestData.generateMinMinus1FullName()},
-                {GenerateTestData.generateMaxPlus1FullName()},
-                {""},
-                {"     "},
-                {GenerateTestData.generateWithTreeSpacesFullName()},
-                {"DROP TABLE user;"},
-        };
-    }
-
     @DataProvider(name = "notValidConfirmPasswordProvider")
     public static Object[][] notValidConfirmPasswordDataProvider() {
         return new Object[][]{
@@ -97,6 +84,20 @@ public class DataProviderRegistrationClass {
                 {"DROP TABLE user;"},
         };
     }
+
+    @DataProvider(name = "notValidFullNameProvider")
+
+    public static Object[][] notValidFullNameDataProvider() {
+        return new Object[][]{
+                {GenerateFullName.generateMaxPlus1FullName()},
+                {GenerateFullName.generateMinMinus1FullName()},
+                {""},
+                {"     "},
+                {GenerateFullName.generateWithTreeSpacesFullName()},
+                {"DROP TABLE user;"},
+        };
+    }
+
 
     @DataProvider(name = "notValidSuperCodeProvider")
     public static Object[][] notValidSuperCodeDataProvider() {

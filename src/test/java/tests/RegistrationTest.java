@@ -31,7 +31,7 @@ public class RegistrationTest extends BaseTest {
                 .fillRegistrationsFields(registrationModel)
                 .clickSignUpButton();
         InformationBoardPage informationBoardPage = new InformationBoardPage(getDriver());
-        LOGGER.info(String.format("Open %s page", InformationBoardPage.class.getName()));
+        LOGGER.info(String.format("Initialization %s page", InformationBoardPage.class.getName()));
         LOGGER.info("Check if account is created");
         Assert.assertTrue(informationBoardPage.isPageOpened(), "User not created");
     }
@@ -87,7 +87,21 @@ public class RegistrationTest extends BaseTest {
         LOGGER.info("Check if error message is displayed");
         Assert.assertTrue(registrationPage.isErrorPasswordMessageIsDisplayed(), "Error message isn't displayed");
     }
-
+    @Test(dataProvider = "notValidConfirmPasswordProvider", dataProviderClass = DataProviderRegistrationClass.class)
+    @Description("The user login with not valid confirm password and valid other fields")
+    @Step("Register user to application by Confirm Password {data[]} ")
+    public void notValidConfirmPasswordRegistrationTest(String data[]) {
+        LOGGER.info(String.format("Page %s initialized", RegistrationPage.class.getName()));
+        RegistrationPage registrationPage = new RegistrationPage(getDriver());
+        LOGGER.info(String.format("Open %s page", RegistrationPage.class.getName()));
+        LOGGER.info(String.format("Prepared valid data by %s", PrepareRegistrationData.class.getName()));
+        RegistrationModel registrationModel = PrepareRegistrationData.fillRegistrationWithNotValidConfirmPasswordModel(data[0]);
+        registrationPage.openRegistrationPage()
+                .fillRegistrationsFields(registrationModel)
+                .clickSignUpButton();
+        LOGGER.info("Check if error message is displayed");
+        Assert.assertTrue(registrationPage.isErrorConfirmPasswordMessageIsDisplayed(), "Error message isn't displayed");
+    }
     @Test(dataProvider = "notValidFullNameProvider", dataProviderClass = DataProviderRegistrationClass.class)
     @Description("The user login with not valid full name and valid other fields")
     @Step("Register user to application by Full Name {data[]}")
@@ -104,21 +118,7 @@ public class RegistrationTest extends BaseTest {
         Assert.assertTrue(registrationPage.isErrorFullNameMessageIsDisplayed(), "Error message isn't displayed");
     }
 
-    @Test(dataProvider = "notValidConfirmPasswordProvider", dataProviderClass = DataProviderRegistrationClass.class)
-    @Description("The user login with not valid confirm password and valid other fields")
-    @Step("Register user to application by Confirm Password {data[]} ")
-    public void notValidConfirmPasswordRegistrationTest(String data[]) {
-        LOGGER.info(String.format("Page %s initialized", RegistrationPage.class.getName()));
-        RegistrationPage registrationPage = new RegistrationPage(getDriver());
-        LOGGER.info(String.format("Open %s page", RegistrationPage.class.getName()));
-        LOGGER.info(String.format("Prepared valid data by %s", PrepareRegistrationData.class.getName()));
-        RegistrationModel registrationModel = PrepareRegistrationData.fillRegistrationWithNotValidConfirmPasswordModel(data[0]);
-        registrationPage.openRegistrationPage()
-                .fillRegistrationsFields(registrationModel)
-                .clickSignUpButton();
-        LOGGER.info("Check if error message is displayed");
-        Assert.assertTrue(registrationPage.isErrorConfirmPasswordMessageIsDisplayed(), "Error message isn't displayed");
-    }
+
 
     @Test(dataProvider = "notValidSuperCodeProvider", dataProviderClass = DataProviderRegistrationClass.class)
     @Description("The user login with not valid Super Code and valid other fields")

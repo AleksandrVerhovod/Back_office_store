@@ -4,7 +4,7 @@
     "name": "sander",
     "email": "nt@ukr.net",
     "createdAt": "2022-10-10T15:03:11.033Z",
-    "updatedAt": "2022-11-20T11:03:42.683Z",
+    "updatedAt": "2022-11-21T11:28:54.686Z",
     "role": "superadmin"
   },
   {
@@ -13,7 +13,7 @@
     "email": "AQATest@mail.com",
     "role": "admin",
     "createdAt": "2022-10-24T14:48:42.677Z",
-    "updatedAt": "2022-11-20T10:06:12.458Z"
+    "updatedAt": "2022-11-21T11:27:55.126Z"
   },
   {
     "_id": "637a099ef0c9eed547ad73f3",
@@ -22,5 +22,13 @@
     "role": "admin",
     "createdAt": "2022-11-20T11:03:58.804Z",
     "updatedAt": "2022-11-20T11:03:58.855Z"
+  },
+  {
+    "_id": "637b606386a75afe618af584",
+    "name": "Ariel",
+    "email": "pkchbblh@test.ru",
+    "role": "admin",
+    "createdAt": "2022-11-21T11:26:27.385Z",
+    "updatedAt": "2022-11-21T11:26:27.434Z"
   }
 ]

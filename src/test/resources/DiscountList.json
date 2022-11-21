@@ -1,1 +1,53 @@
-[]
+[
+  {
+    "_id": "635b6b1eb04b0218629ff78b",
+    "name": "bicycle",
+    "price": 8000,
+    "quantity": 2,
+    "category": [
+      "sport",
+      "transport"
+    ],
+    "vendor": "000",
+    "art": "000003",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:39:42.770Z",
+    "updatedAt": "2022-11-19T21:29:08.373Z",
+    "discountPrice": 6400,
+    "status": "present"
+  },
+  {
+    "_id": "635b6ba001147105ac59af5a",
+    "name": "mounting byke",
+    "price": 12000,
+    "quantity": 2,
+    "category": [
+      "sport",
+      "transport"
+    ],
+    "vendor": "000",
+    "art": "000004",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:41:52.894Z",
+    "updatedAt": "2022-11-19T21:29:29.634Z",
+    "discountPrice": 9600,
+    "status": "present"
+  },
+  {
+    "_id": "635b6d2801147105ac59af74",
+    "name": "ball",
+    "price": 850,
+    "quantity": 5,
+    "category": [
+      "sport",
+      "toys"
+    ],
+    "vendor": "000",
+    "art": "000007",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:48:24.899Z",
+    "updatedAt": "2022-11-19T21:30:12.833Z",
+    "discountPrice": 680,
+    "status": "present"
+  }
+]

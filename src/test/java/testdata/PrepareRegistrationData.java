@@ -4,6 +4,7 @@ import constants.Credentials;
 import models.RegistrationModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import utils.GenerateEmail;
 import utils.GenerateTestData;
 
 public class PrepareRegistrationData {
@@ -38,7 +39,7 @@ public class PrepareRegistrationData {
         LOGGER.info(String.format("Generate registration with Password: %s",password));
         return RegistrationModel
                 .builder()
-                .email(Credentials.VALID_CONST_EMAIL)
+                .email(GenerateEmail.generateEmail())
                 .password(password)
                 .confirmPassword(password)
                 .fullName(GenerateTestData.generateFullName())

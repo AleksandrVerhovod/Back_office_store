@@ -1,15 +1,17 @@
 {
-  "name": "Hettie",
-  "price": 8,
-  "quantity": 123,
+  "name": "Azalee",
+  "price": 0,
+  "quantity": 0,
+  "unit": "pcs",
   "category": [
-    "Metapod"
+    "unSorted"
   ],
   "discountPrice": 0,
+  "status": "present",
   "vendor": "000",
-  "art": "000035",
+  "art": "000087",
   "owner": "AQATest@mail.com",
-  "_id": "636a96bfc034f902db6fec72",
-  "createdAt": "2022-11-08T17:49:51.416Z",
-  "updatedAt": "2022-11-08T17:49:51.416Z"
+  "_id": "637b60a586a75afe618af593",
+  "createdAt": "2022-11-21T11:27:33.618Z",
+  "updatedAt": "2022-11-21T11:27:33.618Z"
 }
