@@ -24,7 +24,7 @@ public class LoginSite {
         LoginModel loginModel = PrepareLoginData.getValidLogin();
         LOGGER.info(String.format("Prepared valid data by %s", PrepareLoginData.class.getName()));
         loginPage.openLoginPage()
-                .sendLoginForm(loginModel);
+                .fillLoginForm(loginModel);
         LOGGER.info(String.format("Prepared valid data by %s", PrepareLoginData.class.getName()));
     }
 

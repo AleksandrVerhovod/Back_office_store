@@ -16,30 +16,30 @@ public class PrepareLoginData {
                 .build();
     }
 
-    public static LoginModel getFakeEmailLogin() {
-        LOGGER.info("Generate login data with random email");
+    public static LoginModel getValidDataForLogin(String email, String password) {
+        LOGGER.info("Generate successfully user");
         return LoginModel
                 .builder()
-                .email(GenerateTestData.generateEmail())
+                .email(email)
+                .password(password)
+                .build();
+    }
+
+    public static LoginModel getNotValidEmailLogin(String email) {
+        LOGGER.info("Generate login data with not valid Email");
+        return LoginModel
+                .builder()
+                .email(email)
                 .password(Credentials.VALID_PASSWORD)
                 .build();
     }
 
-    public static LoginModel getFakePasswordLogin() {
-        LOGGER.info("Generate login data with invalid password");
+    public static LoginModel getNotValidPasswordLogin(String password) {
+        LOGGER.info("Generate login data with not valid Email");
         return LoginModel
                 .builder()
                 .email(Credentials.VALID_CONST_EMAIL)
-                .password(GenerateTestData.generatePassword())
-                .build();
-    }
-
-    public static LoginModel getLoginWithEmptyFieldsLogin() {
-        LOGGER.info("Generate login data with empty fields password and confirm password");
-        return LoginModel
-                .builder()
-                .email("")
-                .password("")
+                .password(password)
                 .build();
     }
 }

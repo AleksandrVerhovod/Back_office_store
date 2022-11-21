@@ -20,7 +20,7 @@ public class DataProviderRegistrationClass {
                 {Credentials.MAXminus1_VALID_EMAIL, Credentials.MAXminus1_VALID_PASSWORD},
                 {Credentials.UPPERCASE_VALID_EMAIL, Credentials.VALID_PASSWORD},
                 {Credentials.WITH_SPACES_VALID_EMAIL, Credentials.WITH_SPACES_VALID_PASSWORD},
-                {Credentials.CYRILLIC_VALID_EMAIL, Credentials.WITH_SPACES_VALID_PASSWORD}
+                {Credentials.CYRILLIC_VALID_EMAIL, Credentials.VALID_PASSWORD}
         };
     }
 

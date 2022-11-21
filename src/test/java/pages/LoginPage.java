@@ -1,6 +1,5 @@
 package pages;
 
-import constants.Credentials;
 import constants.Urls;
 import io.qameta.allure.Step;
 import models.LoginModel;
@@ -52,14 +51,21 @@ public class LoginPage extends BasePage {
     }
 
     @Step("Fill user form by valid random data")
-    public ProductsListPage sendLoginForm(LoginModel loginModel) {
+    public LoginPage fillLoginForm(LoginModel loginModel) {
         EMAIL_INPUT.sendKeys(loginModel.getEmail());
         LOGGER.debug(String.format("Input email: %s", loginModel.getEmail()));
         PASSWORD_INPUT.sendKeys(loginModel.getPassword());
         LOGGER.debug(String.format("Input password: %s", loginModel.getPassword()));
         LOGGER.debug(String.format("Attempt to click button: %s", BUTTON_LOGIN));
         BUTTON_LOGIN.click();
-        return new ProductsListPage(driver);
+        return this;
+    }
+
+    @Step("Click button 'Sign Up'")
+    public InformationBoardPage clickSignUpButton() {
+        LOGGER.debug(String.format("Attempt to click button by locator: %s", BUTTON_LOGIN));
+        BUTTON_LOGIN.click();
+        return new InformationBoardPage(driver);
     }
 
     @Step("Check if Error message is displayed")
