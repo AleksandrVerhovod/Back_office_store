@@ -136,20 +136,20 @@
     "updatedAt": "2022-11-22T10:14:39.366Z"
   },
   {
-    "_id": "637ca41689571cb9c08b6890",
-    "name": "Sandy",
-    "price": 7,
-    "quantity": 668,
+    "_id": "637cad9f89571cb9c08b69d3",
+    "name": "Alba",
+    "price": 9,
+    "quantity": 667,
     "unit": "pcs",
     "category": [
-      "Seadra"
+      "Seel"
     ],
-    "discountPrice": 53,
+    "discountPrice": 9,
     "status": "present",
     "vendor": "000",
-    "art": "000103",
+    "art": "000104",
     "owner": "AQATest@mail.com",
-    "createdAt": "2022-11-22T10:27:34.658Z",
-    "updatedAt": "2022-11-22T10:27:40.110Z"
+    "createdAt": "2022-11-22T11:08:15.692Z",
+    "updatedAt": "2022-11-22T11:08:20.827Z"
   }
 ]

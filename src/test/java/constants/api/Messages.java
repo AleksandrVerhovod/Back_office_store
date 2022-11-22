@@ -5,7 +5,7 @@ public class Messages {
     public static final String LOGOUT = "logout successful";
     public static final String REG_USER = "New user created and logged in";
     public static final String ADD_PRODUCT = "product added successfully";
-    public static final String DELETE_PRODUCT = "product id=%s deleted successfully";
+    public static final String DELETE_PRODUCT = "updated successfully";
     public static final String DELETE_VENDOR = "vendor deleted successfully";
     public static final String UPDATE_PRODUCT = "updated successfully";
     public static final String UPDATE_VENDOR = "vendor updated successfully";

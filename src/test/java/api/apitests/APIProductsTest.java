@@ -169,7 +169,6 @@ public class APIProductsTest {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String idProduct = PrepareDataAPI.getProductId();
         String loginToken = PrepareDataAPI.getUserToken();
-        String expectedMessage = String.format(Messages.DELETE_PRODUCT, idProduct);
         DeleteByIdModel deleteProductRequest = PrepareProductDataAPI.deleteProductData(idProduct);
         DeleteResponseModel deleteProduct = given()
                 .auth()
@@ -180,6 +179,6 @@ public class APIProductsTest {
                 .put(Urls.URL_PRODUCT)
                 .then().log().body()
                 .extract().as(DeleteResponseModel.class);
-        Assert.assertEquals(deleteProduct.getMessage(), expectedMessage);
+        Assert.assertEquals(deleteProduct.getMessage(), Messages.DELETE_PRODUCT);
     }
 }
