@@ -36,6 +36,7 @@ public class PrepareProductDataAPI {
         return DeleteByIdModel
                 .builder()
                 .id(string)
+                .status("deleted")
                 .build();
     }
 }

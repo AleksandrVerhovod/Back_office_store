@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression UI Test">
+    <parameter name="browserType" value="chrome"/>
+    <test name="Registration" thread-count="1" parallel="methods">
+        <classes>
+            <class name="tests.MainPageTest"/>
+            <class name="tests.RegistrationTest"/>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test> <!-- Test -->
+</suite>

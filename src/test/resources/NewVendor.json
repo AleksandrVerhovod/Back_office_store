@@ -1,10 +1,10 @@
 {
-  "_id": "637b60e386a75afe618af5af",
-  "name": "Keebler",
-  "regCode": "71518663",
-  "code": "030",
-  "address": "Apt. 796 9848 Shaun Grove, Haneborough, HI 53794",
+  "_id": "637ca41989571cb9c08b6898",
+  "name": "McCullough",
+  "regCode": "36094628",
+  "code": "053",
+  "address": "144 Jerrold Inlet, South Boyce, NH 93074-8731",
   "owner": "AQATest@mail.com",
-  "createdAt": "2022-11-21T11:28:35.017Z",
-  "updatedAt": "2022-11-21T11:28:36.582Z"
+  "createdAt": "2022-11-22T10:27:37.132Z",
+  "updatedAt": "2022-11-22T10:27:44.601Z"
 }

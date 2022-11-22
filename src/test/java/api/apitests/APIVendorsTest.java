@@ -40,7 +40,7 @@ public class APIVendorsTest {
                 .extract().response();
     }
 
-    @Test(priority = 3)
+    @Test (priority = -1)
     public void addVendorTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK201());
         VendorRequestModel vendorRequestModel = PrepareVendorDataAPI.getValidVendorData();
@@ -65,22 +65,22 @@ public class APIVendorsTest {
         Assert.assertEquals(PrepareDataAPI.getVendorName(), vendorRequestModel.getName());
     }
 
-    @Test(priority = 4)
+    @Test
     public void getVendorByNameTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String loginToken = PrepareDataAPI.getUserToken();
-        Response response = given()
+        given()
                 .auth()
                 .preemptive()
                 .oauth2(loginToken)
                 .when()
                 .get(String.format(Urls.URL_VALID_VENDOR_NAME, PrepareDataAPI.getVendorName()))
                 .then().log().body()
-                .body("data.id", notNullValue())
+                .body("quantity", greaterThanOrEqualTo(1))
                 .extract().response();
     }
 
-    @Test(priority = 5)
+    @Test
     public void updateVendorTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         VendorRequestModel vendorRequestModel = PrepareVendorDataAPI.putValidVendorData();
@@ -109,7 +109,7 @@ public class APIVendorsTest {
         Assert.assertEquals(updProductMessage, Messages.UPDATE_VENDOR);
     }
 
-    @Test(priority = 6)
+    @Test (priority = 2)
     public void deleteVendorTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String idVendor= PrepareDataAPI.getVendorId();

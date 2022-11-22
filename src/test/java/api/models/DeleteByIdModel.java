@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DeleteByIdModel {
     private String id;
+    private String status;
 }

@@ -63,7 +63,7 @@ public class RegistrationPage extends BasePage {
         return this;
     }
 
-    @Step("Fill registration form with not valid email")
+    @Step("Fill registration form")
     public RegistrationPage fillRegistrationsFields(RegistrationModel regModel) {
         EMAIL_FIELD.sendKeys(regModel.getEmail());
         LOGGER.debug(String.format("Input into field Email value: %s", regModel.getEmail()));

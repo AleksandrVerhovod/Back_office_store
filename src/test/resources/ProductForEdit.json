@@ -1,17 +1,19 @@
 [
   {
-    "_id": "636a96bfc034f902db6fec72",
-    "name": "Hettie",
-    "price": 8,
-    "quantity": 123,
+    "_id": "637ca41689571cb9c08b6890",
+    "name": "Corinna",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
     "category": [
-      "Metapod"
+      "unSorted"
     ],
     "discountPrice": 0,
+    "status": "present",
     "vendor": "000",
-    "art": "000035",
+    "art": "000103",
     "owner": "AQATest@mail.com",
-    "createdAt": "2022-11-08T17:49:51.416Z",
-    "updatedAt": "2022-11-08T17:49:51.416Z"
+    "createdAt": "2022-11-22T10:27:34.658Z",
+    "updatedAt": "2022-11-22T10:27:34.658Z"
   }
 ]

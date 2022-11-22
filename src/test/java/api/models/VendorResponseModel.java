@@ -13,12 +13,13 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class VendorResponseModel {
-    private String _id;
+
     private String name;
     private Integer regCode;
     private Integer code;
     private String address;
     private String owner;
+    private String _id;
     private Date createdAt;
     private Date updatedAt;
 

@@ -1,5 +1,5 @@
 {
-  "name": "Azalee",
+  "name": "Corinna",
   "price": 0,
   "quantity": 0,
   "unit": "pcs",
@@ -9,9 +9,9 @@
   "discountPrice": 0,
   "status": "present",
   "vendor": "000",
-  "art": "000087",
+  "art": "000103",
   "owner": "AQATest@mail.com",
-  "_id": "637b60a586a75afe618af593",
-  "createdAt": "2022-11-21T11:27:33.618Z",
-  "updatedAt": "2022-11-21T11:27:33.618Z"
+  "_id": "637ca41689571cb9c08b6890",
+  "createdAt": "2022-11-22T10:27:34.658Z",
+  "updatedAt": "2022-11-22T10:27:34.658Z"
 }

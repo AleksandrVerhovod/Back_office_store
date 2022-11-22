@@ -1,1 +1,655 @@
-null
+[
+  {
+    "_id": "635b4fb334ede5c3169a6d1f",
+    "name": "meat",
+    "price": 190,
+    "quantity": 35.4,
+    "category": [
+      "food"
+    ],
+    "vendor": "000",
+    "art": "000001",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T03:42:43.412Z",
+    "updatedAt": "2022-11-19T21:28:34.673Z",
+    "discountPrice": 0,
+    "status": "present"
+  },
+  {
+    "_id": "635b6979167fef117177274b",
+    "name": "carrot",
+    "price": 10,
+    "quantity": 8.65,
+    "category": [
+      "food"
+    ],
+    "vendor": "000",
+    "art": "000002",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:32:41.492Z",
+    "updatedAt": "2022-11-19T21:28:49.857Z",
+    "discountPrice": 0,
+    "status": "deleted"
+  },
+  {
+    "_id": "635b6b1eb04b0218629ff78b",
+    "name": "bicycle",
+    "price": 8000,
+    "quantity": 2,
+    "category": [
+      "sport",
+      "transport"
+    ],
+    "vendor": "000",
+    "art": "000003",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:39:42.770Z",
+    "updatedAt": "2022-11-19T21:29:08.373Z",
+    "discountPrice": 6400,
+    "status": "present"
+  },
+  {
+    "_id": "635b6ba001147105ac59af5a",
+    "name": "mounting byke",
+    "price": 12000,
+    "quantity": 2,
+    "category": [
+      "sport",
+      "transport"
+    ],
+    "vendor": "000",
+    "art": "000004",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:41:52.894Z",
+    "updatedAt": "2022-11-19T21:29:29.634Z",
+    "discountPrice": 9600,
+    "status": "present"
+  },
+  {
+    "_id": "635b6c1201147105ac59af60",
+    "name": "cellphone Iphone13",
+    "price": 59780,
+    "quantity": 1,
+    "category": [
+      "electronics"
+    ],
+    "vendor": "000",
+    "art": "000005",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:43:46.743Z",
+    "updatedAt": "2022-11-19T21:29:49.197Z",
+    "discountPrice": 0,
+    "status": "present"
+  },
+  {
+    "_id": "635b6c2e01147105ac59af66",
+    "name": "cellphone Xiaomi xxx",
+    "price": 33550,
+    "quantity": 2,
+    "category": [
+      "electronics"
+    ],
+    "vendor": "000",
+    "art": "000006",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:44:14.006Z",
+    "updatedAt": "2022-11-19T21:30:01.520Z",
+    "discountPrice": 0,
+    "status": "present"
+  },
+  {
+    "_id": "635b6d2801147105ac59af74",
+    "name": "ball",
+    "price": 850,
+    "quantity": 5,
+    "category": [
+      "sport",
+      "toys"
+    ],
+    "vendor": "000",
+    "art": "000007",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:48:24.899Z",
+    "updatedAt": "2022-11-19T21:30:12.833Z",
+    "discountPrice": 680,
+    "status": "present"
+  },
+  {
+    "_id": "635b6e4858905712190f369a",
+    "name": "gym ball",
+    "price": 520,
+    "quantity": 2,
+    "category": [
+      "sport",
+      "toys"
+    ],
+    "vendor": "000",
+    "art": "000008",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-28T05:53:12.567Z",
+    "updatedAt": "2022-11-19T21:30:54.686Z",
+    "discountPrice": 416,
+    "unit": "pcs",
+    "status": "deleted"
+  },
+  {
+    "_id": "635f793bea358c32f1a84251",
+    "name": "gym bar",
+    "price": 900,
+    "quantity": 6,
+    "category": [
+      "sport",
+      "toys"
+    ],
+    "vendor": "000",
+    "art": "000009",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-31T07:28:59.106Z",
+    "updatedAt": "2022-11-19T21:31:11.515Z",
+    "discountPrice": 720,
+    "status": "deleted"
+  },
+  {
+    "_id": "635f7a9bc1aab1b0688a0503",
+    "name": "boxes",
+    "price": 100,
+    "quantity": 3,
+    "category": [
+      "stuff"
+    ],
+    "vendor": "001",
+    "art": "000013",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-31T07:34:51.751Z",
+    "updatedAt": "2022-11-19T21:31:30.756Z",
+    "discountPrice": 0,
+    "status": "present"
+  },
+  {
+    "_id": "635f7b215406d36af258d967",
+    "name": "boxes small",
+    "price": 30,
+    "quantity": 12,
+    "category": [
+      "stuff"
+    ],
+    "vendor": "001",
+    "art": "000012",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-31T07:37:05.810Z",
+    "updatedAt": "2022-11-19T21:31:48.112Z",
+    "discountPrice": 0,
+    "status": "present"
+  },
+  {
+    "_id": "635f7bd8c89b2ff4f8aec65a",
+    "name": "boxes medium",
+    "price": 50,
+    "quantity": 9,
+    "category": [
+      "stuff"
+    ],
+    "vendor": "001",
+    "art": "000011",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-31T07:40:08.479Z",
+    "updatedAt": "2022-11-19T21:32:03.888Z",
+    "discountPrice": 0,
+    "status": "present"
+  },
+  {
+    "_id": "635f870fbf2c1404039b34c9",
+    "name": "coffee Nescafe",
+    "price": 140,
+    "quantity": 8,
+    "category": [
+      "food"
+    ],
+    "vendor": "002",
+    "art": "000014",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-10-31T08:27:59.372Z",
+    "updatedAt": "2022-11-19T21:32:13.797Z",
+    "discountPrice": 0,
+    "status": "present"
+  },
+  {
+    "_id": "6360c56d2e900b9a2f754413",
+    "name": "teapot",
+    "price": 470,
+    "quantity": 20,
+    "category": [
+      "kitchenware"
+    ],
+    "vendor": "002",
+    "art": "000015",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-01T07:06:21.544Z",
+    "updatedAt": "2022-11-19T21:32:23.972Z",
+    "discountPrice": 0,
+    "status": "present"
+  },
+  {
+    "_id": "6362c1fa45242b726b1276c5",
+    "name": "Tea",
+    "price": 60,
+    "quantity": 15,
+    "category": [
+      "food"
+    ],
+    "vendor": "000",
+    "art": "000016",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-02T19:16:10.862Z",
+    "updatedAt": "2022-11-19T21:32:43.108Z",
+    "discountPrice": 0,
+    "status": "present"
+  },
+  {
+    "_id": "6362ca377c9d2473f21d5db6",
+    "name": "green tea ",
+    "price": 70,
+    "quantity": 11,
+    "category": [
+      "food"
+    ],
+    "discountPrice": 0,
+    "vendor": "000",
+    "art": "000017",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-02T19:51:19.990Z",
+    "updatedAt": "2022-11-19T21:32:54.221Z",
+    "status": "present"
+  },
+  {
+    "_id": "63774c9cde3ea1117681419b",
+    "name": "some stuff",
+    "price": 999,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "vendor": "000",
+    "art": "000081",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-18T09:13:00.700Z",
+    "updatedAt": "2022-11-19T21:33:06.607Z",
+    "status": "present"
+  },
+  {
+    "_id": "63774ccbb7197ae73096d51c",
+    "name": "beer",
+    "price": 70,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "vendor": "000",
+    "art": "000082",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-18T09:13:47.211Z",
+    "updatedAt": "2022-11-19T21:28:17.715Z",
+    "status": "present"
+  },
+  {
+    "_id": "6379ff7d842b57a58469248b",
+    "name": "abra-kadabra",
+    "price": 500,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000083",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-20T10:20:45.148Z",
+    "updatedAt": "2022-11-20T10:20:45.148Z"
+  },
+  {
+    "_id": "6379ffbe842b57a584692491",
+    "name": "carrot",
+    "price": 15,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000084",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-20T10:21:50.250Z",
+    "updatedAt": "2022-11-20T10:21:50.250Z"
+  },
+  {
+    "_id": "637a0262e6f8fc3a282bccc6",
+    "name": "Milk",
+    "price": 55,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000085",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-20T10:33:06.360Z",
+    "updatedAt": "2022-11-20T10:33:06.360Z"
+  },
+  {
+    "_id": "637b5fe686a75afe618af574",
+    "name": "Fred",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000086",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-21T11:24:22.190Z",
+    "updatedAt": "2022-11-21T11:24:22.190Z"
+  },
+  {
+    "_id": "637b60a586a75afe618af593",
+    "name": "Azalee",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000087",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-21T11:27:33.618Z",
+    "updatedAt": "2022-11-21T11:27:33.618Z"
+  },
+  {
+    "_id": "637c7f5389571cb9c08b62a8",
+    "name": "Norma",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000088",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T07:50:43.522Z",
+    "updatedAt": "2022-11-22T07:50:43.522Z"
+  },
+  {
+    "_id": "637c83a389571cb9c08b63bb",
+    "name": "Lizzie",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000089",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T08:09:07.616Z",
+    "updatedAt": "2022-11-22T08:09:07.616Z"
+  },
+  {
+    "_id": "637c862c89571cb9c08b6425",
+    "name": "Sherley",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000090",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T08:19:56.309Z",
+    "updatedAt": "2022-11-22T08:19:56.309Z"
+  },
+  {
+    "_id": "637c875289571cb9c08b6463",
+    "name": "Coralie",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000091",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T08:24:50.092Z",
+    "updatedAt": "2022-11-22T08:24:50.092Z"
+  },
+  {
+    "_id": "637c8a7b89571cb9c08b653e",
+    "name": "Laine",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000092",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T08:38:19.185Z",
+    "updatedAt": "2022-11-22T08:38:19.185Z"
+  },
+  {
+    "_id": "637c8b8b89571cb9c08b6576",
+    "name": "Athena",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000093",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T08:42:51.453Z",
+    "updatedAt": "2022-11-22T08:42:51.453Z"
+  },
+  {
+    "_id": "637c8c0989571cb9c08b65ae",
+    "name": "Austin",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000094",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T08:44:57.501Z",
+    "updatedAt": "2022-11-22T08:44:57.501Z"
+  },
+  {
+    "_id": "637c8c4c89571cb9c08b65dc",
+    "name": "Harlan",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000095",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T08:46:04.805Z",
+    "updatedAt": "2022-11-22T08:46:04.805Z"
+  },
+  {
+    "_id": "637c90bb89571cb9c08b6621",
+    "name": "Ping",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000096",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T09:04:59.403Z",
+    "updatedAt": "2022-11-22T09:04:59.403Z"
+  },
+  {
+    "_id": "637c946b89571cb9c08b6665",
+    "name": "Shaunte",
+    "price": 5,
+    "quantity": 437,
+    "unit": "pcs",
+    "category": [
+      "Magneton"
+    ],
+    "discountPrice": 4,
+    "status": "present",
+    "vendor": "000",
+    "art": "000097",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T09:20:43.978Z",
+    "updatedAt": "2022-11-22T09:20:48.194Z"
+  },
+  {
+    "_id": "637c976389571cb9c08b66b0",
+    "name": "Armand",
+    "price": 5,
+    "quantity": 901,
+    "unit": "pcs",
+    "category": [
+      "Bellsprout"
+    ],
+    "discountPrice": 57,
+    "status": "present",
+    "vendor": "000",
+    "art": "000098",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T09:33:23.658Z",
+    "updatedAt": "2022-11-22T09:33:27.552Z"
+  },
+  {
+    "_id": "637c980589571cb9c08b66fc",
+    "name": "Candace",
+    "price": 5,
+    "quantity": 913,
+    "unit": "pcs",
+    "category": [
+      "Psyduck"
+    ],
+    "discountPrice": 40,
+    "status": "present",
+    "vendor": "000",
+    "art": "000099",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T09:36:05.632Z",
+    "updatedAt": "2022-11-22T09:36:09.621Z"
+  },
+  {
+    "_id": "637c9a5189571cb9c08b6742",
+    "name": "Tiffany",
+    "price": 1,
+    "quantity": 602,
+    "unit": "pcs",
+    "category": [
+      "Tangela"
+    ],
+    "discountPrice": 43,
+    "status": "present",
+    "vendor": "000",
+    "art": "0000100",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T09:45:53.193Z",
+    "updatedAt": "2022-11-22T09:45:57.476Z"
+  },
+  {
+    "_id": "637ca10a89571cb9c08b6815",
+    "name": "Sal",
+    "price": 7,
+    "quantity": 828,
+    "unit": "pcs",
+    "category": [
+      "Venomoth"
+    ],
+    "discountPrice": 65,
+    "status": "present",
+    "vendor": "000",
+    "art": "000101",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T10:14:34.698Z",
+    "updatedAt": "2022-11-22T10:14:39.366Z"
+  },
+  {
+    "_id": "637ca27089571cb9c08b6852",
+    "name": "Russell",
+    "price": 3,
+    "quantity": 168,
+    "unit": "pcs",
+    "category": [
+      "Vaporeon"
+    ],
+    "discountPrice": 38,
+    "status": "deleted",
+    "vendor": "000",
+    "art": "000102",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T10:20:32.549Z",
+    "updatedAt": "2022-11-22T10:20:43.346Z"
+  },
+  {
+    "_id": "637ca41689571cb9c08b6890",
+    "name": "Corinna",
+    "price": 0,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000103",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T10:27:34.658Z",
+    "updatedAt": "2022-11-22T10:27:34.658Z"
+  }
+]

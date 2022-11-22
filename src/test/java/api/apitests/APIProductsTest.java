@@ -7,7 +7,6 @@ import api.utils.Specifications;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import constants.Credentials;
-import constants.DataConstants;
 import constants.api.Messages;
 import constants.Urls;
 import io.restassured.http.ContentType;
@@ -25,27 +24,8 @@ import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class APIProductsTest {
-    @Test(priority = 1)
-    public void loginUserTest() {
-        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
-        LoginUserRequestModel loginData = new LoginUserRequestModel(Credentials.VALID_EMAIL, Credentials.VALID_PASSWORD);
-        LoginUserResponseModel loginUserData = given()
-                .body(loginData)
-                .when()
-                .contentType(ContentType.JSON)
-                .post(Urls.URL_LOGIN_USER)
-                .then().log().all()
-                .extract().as(LoginUserResponseModel.class);
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        try (FileWriter writer = new FileWriter("src/test/resources/LoginUser.json")) {
-            gson.toJson(loginUserData, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Assert.assertEquals(loginUserData.getMessage(), Messages.LOGIN);
-    }
 
-    @Test(priority = 2)
+    @Test (priority = -1)
     public void getAllProductsTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String loginToken = PrepareDataAPI.getUserToken();
@@ -59,7 +39,7 @@ public class APIProductsTest {
                 .body("qty", greaterThanOrEqualTo(1))
                 .extract().response();
         JsonPath jsonPathWrite = response.jsonPath();
-        List<ProductDataResponseModel> productJson = jsonPathWrite.getList("data");
+        List<ProductDataResponseModel> productJson = jsonPathWrite.getList("result");
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("src/test/resources/ListOfProduct.json")) {
             gson.toJson(productJson, writer);
@@ -68,7 +48,7 @@ public class APIProductsTest {
         }
     }
 
-    @Test(priority = 3)
+    @Test (priority = -1)
     public void addValidProductTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK201());
         CreatedProductModel createdProductModel = PrepareProductDataAPI.getValidCreatedProductData();
@@ -93,7 +73,7 @@ public class APIProductsTest {
         Assert.assertEquals(PrepareDataAPI.getProductName(), createdProductModel.getName());
     }
 
-    @Test(priority = 4)
+    @Test (priority = -1)
     public void getProductByNameTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String loginToken = PrepareDataAPI.getUserToken();
@@ -104,10 +84,10 @@ public class APIProductsTest {
                 .when()
                 .get(String.format(Urls.URL_VALID_NAME_PRODUCT, PrepareDataAPI.getProductName()))
                 .then().log().body()
-                .body("data.id", notNullValue())
+                .body("qty", greaterThanOrEqualTo(1))
                 .extract().response();
         JsonPath jsonPath = response.jsonPath();
-        List<ProductDataResponseModel> productJson = jsonPath.getList("data");
+        List<ProductDataResponseModel> productJson = jsonPath.getList("result");
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("src/test/resources/ProductForEdit.json")) {
             gson.toJson(productJson, writer);
@@ -116,7 +96,7 @@ public class APIProductsTest {
         }
     }
 
-    @Test(priority = 4)
+    @Test
     public void getProductByVendorTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String loginToken = PrepareDataAPI.getUserToken();
@@ -127,11 +107,11 @@ public class APIProductsTest {
                 .when()
                 .get(String.format(Urls.URL_VALID_VENDOR_PRODUCT, PrepareDataAPI.getProductVendor()))
                 .then().log().body()
-                .body("quantity", notNullValue())
+                .body("qty", greaterThanOrEqualTo(1))
                 .extract().response();
     }
 
-    @Test(priority = 4)
+    @Test
     public void getProductByMultipleParametersTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String loginToken = PrepareDataAPI.getUserToken();
@@ -142,11 +122,11 @@ public class APIProductsTest {
                 .when()
                 .get(Urls.URL_VALID_MULTI_PARAMETERS_PRODUCT)
                 .then().log().body()
-                .body("quantity", notNullValue())
+                .body("qty", greaterThanOrEqualTo(1))
                 .extract().response();
 
     }
-    @Test(priority = 4)
+    @Test
     public void getProductByPriceRangeTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String loginToken = PrepareDataAPI.getUserToken();
@@ -157,12 +137,12 @@ public class APIProductsTest {
                 .when()
                 .get(Urls.URL_VALID_RANGE_PRICE_PRODUCT)
                 .then().log().body()
-                .body("quantity", notNullValue())
+                .body("qty", greaterThanOrEqualTo(1))
                 .extract().response();
     }
 
 
-    @Test(priority = 5)
+    @Test
     public void updateOneProductTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         ProductDataRequestModel productDataReq = PrepareProductDataAPI.getProductAllFieldsUpdData();
@@ -184,7 +164,7 @@ public class APIProductsTest {
         Assert.assertEquals(updProductMessage, Messages.UPDATE_PRODUCT);
     }
 
-    @Test(priority = 6)
+    @Test (priority = 2)
     public void deleteOneProductTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String idProduct = PrepareDataAPI.getProductId();
@@ -197,7 +177,7 @@ public class APIProductsTest {
                 .oauth2(loginToken)
                 .body(deleteProductRequest)
                 .when()
-                .delete(Urls.URL_PRODUCT)
+                .put(Urls.URL_PRODUCT)
                 .then().log().body()
                 .extract().as(DeleteResponseModel.class);
         Assert.assertEquals(deleteProduct.getMessage(), expectedMessage);

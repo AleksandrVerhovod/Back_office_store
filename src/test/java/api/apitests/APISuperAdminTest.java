@@ -25,7 +25,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 public class APISuperAdminTest {
-    @Test(priority = 1)
+    @Test
     public void getSuperAdminInfoTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         LoginUserRequestModel loginData = new LoginUserRequestModel(Credentials.SUPER_EMAIL, Credentials.SUPER_PASSWORD);
@@ -46,7 +46,7 @@ public class APISuperAdminTest {
     }
 
 
-    @Test(priority = 2)
+    @Test
     public void putSuperPassAndRoleTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         SuperAdminPutRequestModel superAdminPutRequestModel = PrepareSuperAdminDataAPI.putSuperAdminInfo();
@@ -66,7 +66,7 @@ public class APISuperAdminTest {
         Assert.assertEquals(superPass, superAdminPutRequestModel.getSuperPass());
     }
 
-    @Test(priority = 2)
+    @Test
     public void updateRoleTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         SuperAdminPutRequestModel superAdminPutRequestModel = PrepareSuperAdminDataAPI.putSuperAdminInfo();
@@ -82,7 +82,7 @@ public class APISuperAdminTest {
                 .log().all()
                 .extract().response();
     }
-    @Test(priority = 2)
+    @Test
     public void getAllUsersInformationTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String loginToken = PrepareDataAPI.getSuperToken();
@@ -106,7 +106,7 @@ public class APISuperAdminTest {
         }
     }
 
-    @Test(priority = 3)
+    @Test (priority = 2)
     public void deleteUserTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String idUser = PrepareDataAPI.getUserId();

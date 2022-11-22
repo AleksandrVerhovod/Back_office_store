@@ -23,7 +23,7 @@ import static org.hamcrest.Matchers.notNullValue;
 
 
 public class APIUsersTest {
-    @Test(priority = 1)
+    @Test (priority = -3)
     public void registrationUserTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK201());
         RegisterModel user = PrepareRegistrationDataAPI.getValidRegistrationAdminData();
@@ -39,7 +39,7 @@ public class APIUsersTest {
         Assert.assertEquals(regUser, user.getEmail());
     }
 
-    @Test(priority = 1)
+    @Test (priority = -2)
     public void loginUserTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         LoginUserRequestModel loginData = new LoginUserRequestModel(Credentials.VALID_EMAIL, Credentials.VALID_PASSWORD);
@@ -59,7 +59,7 @@ public class APIUsersTest {
         Assert.assertEquals(loginUserData.getMessage(), Messages.LOGIN);
     }
 
-    @Test (priority = 2)
+    @Test
     public void getUserTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String loginToken = PrepareDataAPI.getUserToken();
@@ -78,7 +78,7 @@ public class APIUsersTest {
         System.out.println(DataConstants.USER());
         Assert.assertEquals(DataConstants.USER(), userName);
     }
-    @Test (priority = 7)
+    @Test (priority = 3)
     public void logoutUserTest() throws FileNotFoundException {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         String loginToken = PrepareDataAPI.getUserToken();

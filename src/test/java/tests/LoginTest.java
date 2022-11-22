@@ -25,7 +25,7 @@ public class LoginTest extends BaseTest {
         LOGGER.info(String.format("Open %s page", LoginPage.class.getName()));
         LOGGER.info(String.format("Prepared valid data by %s", PrepareLoginData.class.getName()));
         LoginModel loginModel = PrepareLoginData.getValidDataForLogin(data[0], data[1]);
-        LOGGER.info(String.format("Fill ", PrepareLoginData.class.getName()));
+        LOGGER.info(String.format("Fill email and password fields", PrepareLoginData.class.getName()));
         loginPage.openLoginPage()
                 .fillLoginForm(loginModel)
                 .clickSignUpButton();
@@ -44,7 +44,7 @@ public class LoginTest extends BaseTest {
         LOGGER.info(String.format("Open %s page", LoginPage.class.getName()));
         LOGGER.info(String.format("Prepared valid data by %s", PrepareLoginData.class.getName()));
         LoginModel loginModel = PrepareLoginData.getNotValidEmailLogin(data[0]);
-        LOGGER.info(String.format("Fill ", PrepareLoginData.class.getName()));
+        LOGGER.info(String.format("Fill email and password fields", PrepareLoginData.class.getName()));
         loginPage.openLoginPage()
                 .fillLoginForm(loginModel)
                 .clickSignUpButton();
@@ -62,7 +62,7 @@ public class LoginTest extends BaseTest {
         LOGGER.info(String.format("Open %s page", LoginPage.class.getName()));
         LOGGER.info(String.format("Prepared valid data by %s", PrepareLoginData.class.getName()));
         LoginModel loginModel = PrepareLoginData.getNotValidPasswordLogin(data[0]);
-        LOGGER.info(String.format("Fill ", PrepareLoginData.class.getName()));
+        LOGGER.info(String.format("Fill email and password fields", PrepareLoginData.class.getName()));
         loginPage.openLoginPage()
                 .fillLoginForm(loginModel)
                 .clickSignUpButton();

@@ -49,5 +49,107 @@
     "updatedAt": "2022-11-19T21:30:12.833Z",
     "discountPrice": 680,
     "status": "present"
+  },
+  {
+    "_id": "637c946b89571cb9c08b6665",
+    "name": "Shaunte",
+    "price": 5,
+    "quantity": 437,
+    "unit": "pcs",
+    "category": [
+      "Magneton"
+    ],
+    "discountPrice": 4,
+    "status": "present",
+    "vendor": "000",
+    "art": "000097",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T09:20:43.978Z",
+    "updatedAt": "2022-11-22T09:20:48.194Z"
+  },
+  {
+    "_id": "637c976389571cb9c08b66b0",
+    "name": "Armand",
+    "price": 5,
+    "quantity": 901,
+    "unit": "pcs",
+    "category": [
+      "Bellsprout"
+    ],
+    "discountPrice": 57,
+    "status": "present",
+    "vendor": "000",
+    "art": "000098",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T09:33:23.658Z",
+    "updatedAt": "2022-11-22T09:33:27.552Z"
+  },
+  {
+    "_id": "637c980589571cb9c08b66fc",
+    "name": "Candace",
+    "price": 5,
+    "quantity": 913,
+    "unit": "pcs",
+    "category": [
+      "Psyduck"
+    ],
+    "discountPrice": 40,
+    "status": "present",
+    "vendor": "000",
+    "art": "000099",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T09:36:05.632Z",
+    "updatedAt": "2022-11-22T09:36:09.621Z"
+  },
+  {
+    "_id": "637c9a5189571cb9c08b6742",
+    "name": "Tiffany",
+    "price": 1,
+    "quantity": 602,
+    "unit": "pcs",
+    "category": [
+      "Tangela"
+    ],
+    "discountPrice": 43,
+    "status": "present",
+    "vendor": "000",
+    "art": "0000100",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T09:45:53.193Z",
+    "updatedAt": "2022-11-22T09:45:57.476Z"
+  },
+  {
+    "_id": "637ca10a89571cb9c08b6815",
+    "name": "Sal",
+    "price": 7,
+    "quantity": 828,
+    "unit": "pcs",
+    "category": [
+      "Venomoth"
+    ],
+    "discountPrice": 65,
+    "status": "present",
+    "vendor": "000",
+    "art": "000101",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T10:14:34.698Z",
+    "updatedAt": "2022-11-22T10:14:39.366Z"
+  },
+  {
+    "_id": "637ca41689571cb9c08b6890",
+    "name": "Sandy",
+    "price": 7,
+    "quantity": 668,
+    "unit": "pcs",
+    "category": [
+      "Seadra"
+    ],
+    "discountPrice": 53,
+    "status": "present",
+    "vendor": "000",
+    "art": "000103",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T10:27:34.658Z",
+    "updatedAt": "2022-11-22T10:27:40.110Z"
   }
 ]
