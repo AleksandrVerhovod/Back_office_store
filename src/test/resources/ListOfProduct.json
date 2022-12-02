@@ -596,7 +596,7 @@
     "discountPrice": 43,
     "status": "present",
     "vendor": "000",
-    "art": "0000100",
+    "art": "000100",
     "owner": "AQATest@mail.com",
     "createdAt": "2022-11-22T09:45:53.193Z",
     "updatedAt": "2022-11-22T09:45:57.476Z"
@@ -654,7 +654,160 @@
   },
   {
     "_id": "637cad9f89571cb9c08b69d3",
-    "name": "Song",
+    "name": "Alba",
+    "price": 9,
+    "quantity": 667,
+    "unit": "pcs",
+    "category": [
+      "Seel"
+    ],
+    "discountPrice": 9,
+    "status": "deleted",
+    "vendor": "000",
+    "art": "000104",
+    "owner": "AQATest@mail.com",
+    "createdAt": "2022-11-22T11:08:15.692Z",
+    "updatedAt": "2022-11-22T11:08:27.445Z"
+  },
+  {
+    "_id": "637cd0080ee38c2bee6f4bc2",
+    "name": "cheese",
+    "price": 800,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "005",
+    "art": "000105",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-22T13:35:04.570Z",
+    "updatedAt": "2022-11-22T13:35:04.570Z"
+  },
+  {
+    "_id": "637cd378e6d98c26ae13ee10",
+    "name": "Sausage",
+    "price": 250,
+    "quantity": 23.3,
+    "unit": "kg",
+    "category": [
+      "food"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "002",
+    "art": "000106",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-22T13:49:44.562Z",
+    "updatedAt": "2022-11-22T13:49:44.562Z"
+  },
+  {
+    "_id": "637fe3473039c0acb6c9a088",
+    "name": "book #5",
+    "price": 150,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "undefined",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-24T21:33:59.910Z",
+    "updatedAt": "2022-11-24T21:33:59.910Z"
+  },
+  {
+    "_id": "637fe3dad264bf7adfc59fee",
+    "name": "book #5",
+    "price": 150,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000100",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-24T21:36:26.130Z",
+    "updatedAt": "2022-11-24T21:36:26.130Z"
+  },
+  {
+    "_id": "637fe55f803589aac5b01059",
+    "name": "book #15",
+    "price": 250,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000105",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-24T21:42:55.259Z",
+    "updatedAt": "2022-11-24T21:42:55.259Z"
+  },
+  {
+    "_id": "637fe6a122b4d0a075bff8a6",
+    "name": "book #15",
+    "price": 250,
+    "quantity": 0,
+    "unit": "pcs",
+    "category": [
+      "unSorted"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000106",
+    "owner": "nt@ukr.net",
+    "createdAt": "2022-11-24T21:48:17.070Z",
+    "updatedAt": "2022-11-24T21:48:17.070Z"
+  },
+  {
+    "_id": "6381344928f6b60dd8f349cb",
+    "name": "Bike",
+    "price": 29999,
+    "quantity": 100,
+    "unit": "pcs",
+    "category": [
+      "sport"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000107",
+    "owner": "test1@mail.ru",
+    "createdAt": "2022-11-25T21:31:53.317Z",
+    "updatedAt": "2022-11-25T21:31:53.317Z"
+  },
+  {
+    "_id": "63823ee1143748cec76f15d9",
+    "name": "Bike spirit edition",
+    "price": 29999,
+    "quantity": 100,
+    "unit": "pcs",
+    "category": [
+      "sport"
+    ],
+    "discountPrice": 0,
+    "status": "present",
+    "vendor": "000",
+    "art": "000108",
+    "owner": "test1@mail.ru",
+    "createdAt": "2022-11-26T16:29:21.153Z",
+    "updatedAt": "2022-11-26T16:29:21.153Z"
+  },
+  {
+    "_id": "6389f9dce3af96aed50e5718",
+    "name": "Kori",
     "price": 0,
     "quantity": 0,
     "unit": "pcs",
@@ -664,9 +817,9 @@
     "discountPrice": 0,
     "status": "present",
     "vendor": "000",
-    "art": "000104",
+    "art": "000109",
     "owner": "AQATest@mail.com",
-    "createdAt": "2022-11-22T11:08:15.692Z",
-    "updatedAt": "2022-11-22T11:08:15.692Z"
+    "createdAt": "2022-12-02T13:13:00.664Z",
+    "updatedAt": "2022-12-02T13:13:00.664Z"
   }
 ]

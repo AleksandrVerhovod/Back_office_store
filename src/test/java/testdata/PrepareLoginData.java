@@ -11,7 +11,7 @@ public class PrepareLoginData {
         LOGGER.info("Generate login valid data");
         return LoginModel
                 .builder()
-                .email(Credentials.VALID_CONST_EMAIL)
+                .email(Credentials.VALID_EMAIL)
                 .password(Credentials.VALID_PASSWORD)
                 .build();
     }

@@ -4,7 +4,7 @@
     "name": "sander",
     "email": "nt@ukr.net",
     "createdAt": "2022-10-10T15:03:11.033Z",
-    "updatedAt": "2022-11-22T10:27:45.630Z",
+    "updatedAt": "2022-12-02T13:13:10.124Z",
     "role": "superadmin"
   },
   {
@@ -13,22 +13,14 @@
     "email": "AQATest@mail.com",
     "role": "admin",
     "createdAt": "2022-10-24T14:48:42.677Z",
-    "updatedAt": "2022-11-22T11:08:14.886Z"
+    "updatedAt": "2022-12-02T13:56:16.783Z"
   },
   {
-    "_id": "637c9e8489571cb9c08b67ef",
-    "name": "Valera",
-    "email": "test1@mail.ru",
+    "_id": "6383607de328f4aaeb17d7d1",
+    "name": "Gabriel R",
+    "email": "g.rabosh.jci@gmail.com",
     "role": "admin",
-    "createdAt": "2022-11-22T10:03:48.367Z",
-    "updatedAt": "2022-11-22T10:03:48.416Z"
-  },
-  {
-    "_id": "637cad9c89571cb9c08b69ca",
-    "name": "Merilyn",
-    "email": "glzkqjsc@test.ru",
-    "role": "admin",
-    "createdAt": "2022-11-22T11:08:12.904Z",
-    "updatedAt": "2022-11-22T11:08:12.954Z"
+    "createdAt": "2022-11-27T13:05:01.582Z",
+    "updatedAt": "2022-11-27T13:05:01.645Z"
   }
 ]

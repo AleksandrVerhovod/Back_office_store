@@ -2,7 +2,7 @@ package constants;
 
 public class Urls {
     //API
-    public static String URL_API = "https://junion-tech-backend.herokuapp.com/";
+    public static String URL_API = "https://junion-tech-server.onrender.com/";
     public static String URL_REG_USER = "users/register";
     public static String URL_LOGIN_USER = "users/login";
     public static String URL_SUPER_USER = "super";
@@ -29,6 +29,8 @@ public class Urls {
     public static String URL_BACK_OFFICE_MAIN = "https://junion-backoffice.vercel.app%s";
     public static String URL_BACK_OFFICE_LOGIN = "/login";
     public static String URL_BACK_OFFICE_REGISTER = "/register";
+    public static String URL_BACK_OFFICE_PRODUCTS = "/products";
+
 
 
 }

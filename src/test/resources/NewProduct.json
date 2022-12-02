@@ -1,5 +1,5 @@
 {
-  "name": "Song",
+  "name": "Kori",
   "price": 0,
   "quantity": 0,
   "unit": "pcs",
@@ -9,9 +9,9 @@
   "discountPrice": 0,
   "status": "present",
   "vendor": "000",
-  "art": "000104",
+  "art": "000109",
   "owner": "AQATest@mail.com",
-  "_id": "637cad9f89571cb9c08b69d3",
-  "createdAt": "2022-11-22T11:08:15.692Z",
-  "updatedAt": "2022-11-22T11:08:15.692Z"
+  "_id": "6389f9dce3af96aed50e5718",
+  "createdAt": "2022-12-02T13:13:00.664Z",
+  "updatedAt": "2022-12-02T13:13:00.664Z"
 }

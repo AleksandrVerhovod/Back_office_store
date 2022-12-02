@@ -87,6 +87,7 @@ public class RegistrationTest extends BaseTest {
         LOGGER.info("Check if error message is displayed");
         Assert.assertTrue(registrationPage.isErrorPasswordMessageIsDisplayed(), "Error message isn't displayed");
     }
+
     @Test(dataProvider = "notValidConfirmPasswordProvider", dataProviderClass = DataProviderRegistrationClass.class)
     @Description("The user login with not valid confirm password and valid other fields")
     @Step("Register user to application by Confirm Password {data[]} ")
@@ -102,6 +103,7 @@ public class RegistrationTest extends BaseTest {
         LOGGER.info("Check if error message is displayed");
         Assert.assertTrue(registrationPage.isErrorConfirmPasswordMessageIsDisplayed(), "Error message isn't displayed");
     }
+
     @Test(dataProvider = "notValidFullNameProvider", dataProviderClass = DataProviderRegistrationClass.class)
     @Description("The user login with not valid full name and valid other fields")
     @Step("Register user to application by Full Name {data[]}")
@@ -117,7 +119,6 @@ public class RegistrationTest extends BaseTest {
         LOGGER.info("Check if error message is displayed");
         Assert.assertTrue(registrationPage.isErrorFullNameMessageIsDisplayed(), "Error message isn't displayed");
     }
-
 
 
     @Test(dataProvider = "notValidSuperCodeProvider", dataProviderClass = DataProviderRegistrationClass.class)

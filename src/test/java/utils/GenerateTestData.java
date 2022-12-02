@@ -25,7 +25,7 @@ public class GenerateTestData {
     // --------------------------PASSWORD-----------------------------
     public static String generatePassword() {
         faker = new Faker();
-        return faker.letterify("??????Q@#&/!-.%$1");
+        return faker.letterify("??????Q#1");
     }
 
 

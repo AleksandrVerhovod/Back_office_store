@@ -9,8 +9,8 @@ public class PrepareRegistrationDataAPI {
     public static RegisterModel getValidRegistrationAdminData() {
         return RegisterModel
                 .builder()
-                .name(GenerateTestData.generateName())
                 .email(GenerateTestData.generateEmail())
+                .name(GenerateTestData.generateName())
                 .password(GenerateTestData.generatePassword())
                 .superCode(Credentials.SUPER_CODE)
                 .build();

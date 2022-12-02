@@ -63,6 +63,13 @@ public class RegistrationPage extends BasePage {
         return this;
     }
 
+    @Step("Refresh registration page")
+    public RegistrationPage refreshRegistrationPage() {
+        LOGGER.debug(String.format("Attempt to open URL: %s", String.format(Urls.URL_BACK_OFFICE_MAIN, Urls.URL_BACK_OFFICE_REGISTER)));
+        driver.navigate().refresh();
+        return this;
+    }
+
     @Step("Fill registration form")
     public RegistrationPage fillRegistrationsFields(RegistrationModel regModel) {
         EMAIL_FIELD.sendKeys(regModel.getEmail());
