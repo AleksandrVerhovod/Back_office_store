@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.InformationBoardPage;
+import pages.ProductsPage;
 import pages.services.LoginSite;
 
 @Feature("Information board page")
@@ -36,4 +37,18 @@ public class InformationBoardTest extends BaseTest {
         informationBoardPage.clickArrayButtonUserInfo();
         Assert.assertTrue(informationBoardPage.buttonLogOutIsDisplayed(), "Button 'Log Out' no displayed");
     }
+
+    @Test
+    @Description("Click link and open Products page")
+    public void selectProductsInSideBarTest() {
+        LoginSite loginSite = new LoginSite(getDriver());
+        LOGGER.info(String.format("Page %s initialized", LoginSite.class.getName()));
+        loginSite.loginForConfirm();
+        InformationBoardPage informationBoardPage = new InformationBoardPage(getDriver());
+        LOGGER.info(String.format("Page %s initialized", InformationBoardPage.class.getName()));
+        informationBoardPage.clickButtonProducts();
+        ProductsPage productsPage = new ProductsPage(getDriver());
+        Assert.assertTrue(productsPage.isPageOpened(), "Products page no displayed");
+    }
+
 }
