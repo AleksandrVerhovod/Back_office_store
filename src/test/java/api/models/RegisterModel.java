@@ -11,10 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RegisterModel {
-    private String name;
     private String email;
+    private String name;
     private String password;
-//    @JsonProperty("super password")
     private String superCode;
 
 }
