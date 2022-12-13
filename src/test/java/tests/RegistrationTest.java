@@ -36,7 +36,7 @@ public class RegistrationTest extends BaseTest {
         Assert.assertTrue(informationBoardPage.isPageOpened(), "User not created");
     }
 
-    @Test(dataProvider = "validRandomEmailPasswordProvider", dataProviderClass = DataProviderRegistrationClass.class)
+    @Test(enabled = false, dataProvider = "validRandomEmailPasswordProvider", dataProviderClass = DataProviderRegistrationClass.class)
     @Description("Create users with random valid data")
     @Step("Register user to application by {data[]}")
     public void createUsersWithRandomDataTest(String data[]) {

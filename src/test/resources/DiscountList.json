@@ -1,20 +1,20 @@
 [
   {
-    "_id": "635b6b1eb04b0218629ff78b",
-    "name": "bicycle",
-    "price": 8000,
-    "quantity": 2,
+    "_id": "635b4fb334ede5c3169a6d1f",
+    "name": "meat",
+    "price": 190,
+    "quantity": 35.4,
     "category": [
-      "sport",
-      "transport"
+      "food"
     ],
     "vendor": "000",
-    "art": "000003",
-    "owner": "nt@ukr.net",
-    "createdAt": "2022-10-28T05:39:42.770Z",
-    "updatedAt": "2022-11-19T21:29:08.373Z",
-    "discountPrice": 6400,
-    "status": "present"
+    "art": "000001",
+    "owner": "denis@mail.ru",
+    "createdAt": "2022-10-28T03:42:43.412Z",
+    "updatedAt": "2022-12-08T21:18:08.420Z",
+    "discountPrice": 171,
+    "status": "present",
+    "unit": "kg"
   },
   {
     "_id": "635b6ba001147105ac59af5a",
@@ -136,20 +136,72 @@
     "updatedAt": "2022-11-22T10:14:39.366Z"
   },
   {
-    "_id": "6389f9dce3af96aed50e5718",
-    "name": "Bernie",
-    "price": 1,
-    "quantity": 781,
+    "_id": "639104abe852761e19785a22",
+    "name": "jem",
+    "price": 20,
+    "quantity": 200,
+    "unit": "kg",
+    "category": [
+      "food"
+    ],
+    "discountPrice": 2,
+    "status": "present",
+    "vendor": "032",
+    "art": "000122",
+    "owner": "denis@mail.ru",
+    "createdAt": "2022-12-07T21:24:59.327Z",
+    "updatedAt": "2022-12-08T21:15:23.563Z"
+  },
+  {
+    "_id": "6392509032dad94010247c7e",
+    "name": "Coca-cola Zero",
+    "price": 250,
+    "quantity": 200,
+    "unit": "kg",
+    "category": [
+      "food",
+      "undefinedsport"
+    ],
+    "discountPrice": 20,
+    "status": "present",
+    "vendor": "029",
+    "art": "000126",
+    "owner": "denis@mail.ru",
+    "createdAt": "2022-12-08T21:01:04.379Z",
+    "updatedAt": "2022-12-08T21:12:05.636Z"
+  },
+  {
+    "_id": "639259d332dad94010247d34",
+    "name": "car",
+    "price": 12999,
+    "quantity": 2,
     "unit": "pcs",
     "category": [
-      "Spearow"
+      "electronics"
     ],
-    "discountPrice": 54,
+    "discountPrice": 12999,
+    "status": "present",
+    "vendor": "003",
+    "art": "000127",
+    "owner": "denis@mail.ru",
+    "createdAt": "2022-12-08T21:40:35.620Z",
+    "updatedAt": "2022-12-08T21:49:28.928Z"
+  },
+  {
+    "_id": "6396df18746b3cad11b1b4be",
+    "name": "Kazuko",
+    "price": 7,
+    "quantity": 792,
+    "unit": "pcs",
+    "category": [
+      "Doduo"
+    ],
+    "discountPrice": 14,
     "status": "present",
     "vendor": "000",
-    "art": "000109",
+    "art": "000128",
     "owner": "AQATest@mail.com",
-    "createdAt": "2022-12-02T13:13:00.664Z",
-    "updatedAt": "2022-12-02T13:13:05.980Z"
+    "createdAt": "2022-12-12T07:58:16.600Z",
+    "updatedAt": "2022-12-12T07:58:20.742Z"
   }
 ]

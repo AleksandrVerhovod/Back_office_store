@@ -25,7 +25,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 public class APISuperAdminTest {
-    @Test
+    @Test (priority = 1)
     public void getSuperAdminInfoTest() {
         Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         LoginUserRequestModel loginData = new LoginUserRequestModel(Credentials.SUPER_EMAIL, Credentials.SUPER_PASSWORD);
